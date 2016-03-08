@@ -1,4 +1,4 @@
-package Entidade;
+    package Entidade;
 
 /**
  *
@@ -7,13 +7,7 @@ package Entidade;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
@@ -21,8 +15,21 @@ import org.hibernate.validator.constraints.NotEmpty;
 @PrimaryKeyJoinColumn(name="SiapeUsuario" + "cpfUsuario")
 public class Administrador  extends Usuario implements Serializable {
     
-    @Id //mostra que não pode ser id pq se não terá vários ids
+    //mostra que não pode ser id pq se não terá vários ids
     @Column(name="Siape_Usuario")
     @NotEmpty 
     Integer idAdm;
+    
+    
+        // Getters e Setters
+
+    public Integer getIdAdm() {
+        return idAdm;
+    }
+
+    public void setIdAdm(Integer idAdm) {
+        this.idAdm = idAdm;
+    }
+    
+    
 }
