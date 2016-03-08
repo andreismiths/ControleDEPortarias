@@ -20,8 +20,7 @@ public class Administrador  extends Usuario implements Serializable {
     @NotEmpty 
     Integer idAdm;
     
-    
-        // Getters e Setters
+         // Getters e Setters
 
     public Integer getIdAdm() {
         return idAdm;
