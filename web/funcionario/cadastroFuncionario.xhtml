@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+  <h:head>
+
+        <title>Cadastro Funcionário | Controle Portarias</title>
+        <h:outputStylesheet library="css" name="style.css" />
+
+  </h:head>
+   <h:body>
+  <div id="painel_cadastro" align="center">
+    <table id="table-header" cellpadding="0" cellspacing="0">
+    <!-- CABEÇALHO -->
+     <tr><td><ui:include src="/template/header.xhtml" /></td></tr>
+    </table>
+    <div id="conteudo">
+     <div id="painel_cadastro" align="center">
+      <div style="top: 0px; " align="center" >  
+    <h:form>
+        <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+        <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+    <p:panelGrid style="width:100%" styleClass="painel_cadastro" columns="1">
+    <h2>CADASTRO DE FUNCIONÁRIO</h2>
+     <p:inputText id="nome" placeholder="Nome" value="#{CadastroFunc.funcionario.nomeUsuario}" required="true" style="width: 300px" requiredMessage="Campo Nome Obrigatório!"></p:inputText>
+
+     <p:inputText id="cpf" placeholder="CPF" value="#{CadastroFunc.funcionario.cpfUsuario}" required="true" style="width: 300px" requiredMessage="Campo CPF Obrigatório!"></p:inputText>
+
+     <p:inputText id="rg" placeholder="RG" value="#{CadastroFunc.funcionario.rgUsuario}" required="true" style="" requiredMessage="Campo RG Obrigatório!"></p:inputText>
+
+     <p:calendar id="datanasc" styleClass="painel_cadastro_portaria" required="true" requiredMessage="Campo Data de Nascimento Obrigatório!" placeholder="Data de Nascimento" value="#{CadastroFunc.funcionario.dataNascimUsuario}" />
+
+     <p:inputText id="email" placeholder="Email" value="#{CadastroFunc.funcionario.emailUsuario}" required="true" style="width: 300px" requiredMessage="Campo Email Obrigatório!"></p:inputText>
+
+     <p:selectOneRadio layout="pageDirection" id="sexo" requiredMessage="Selecione seu Sexo" required="true" value="#{CadastroFunc.funcionario.sexoUsuario}">
+      <f:selectItem itemLabel="Masculino" id="masc" itemValue="Masc" />
+      <f:selectItem itemLabel="Feminino" id="fem" itemValue="Fem" />
+     </p:selectOneRadio>
+
+     <p:inputText id="departamento" placeholder="Departamento" value="#{CadastroFunc.funcionario.departanento}" required="true" style="width: 300px !important;" requiredMessage="Campo Departamento Obrigatório!"></p:inputText>
+
+     <p:inputText id="siape" placeholder="SIAPE" value="#{CadastroFunc.funcionario.siapeUsuario}" required="true" style="width: 300px" requiredMessage="Campo SIAPE Obrigatório!"></p:inputText>
+
+     <p:calendar id="dataentra" required="true" requiredMessage="Campo Data Entrada Obrigatório!" style="width: 300px" styleClass="painel_cadastro_portaria" placeholder="Data Entrada Funcionario" value="#{CadastroFunc.funcionario.dataEntrada}"/>
+
+     <p:password id="senhafunc" required="true" style="width: 300px" placeholder="Senha" requiredMessage="Campo Senha Obrigatório!" value="#{CadastroFunc.funcionario.senhaUsuario}"/>
+
+     <p:commandButton action="#{CadastroFunc.criaFunc()}"  value="Adicionar"/> 
+    </p:panelGrid>
+    </h:form>
+       </div>
+      </div>
+     </div>
+    </div>
+   
+   </h:body>
+</html>
+
+
+

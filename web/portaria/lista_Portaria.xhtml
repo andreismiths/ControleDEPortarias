@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Portarias</title>
+    </h:head>
+     <h:body>        
+      <h:form id="listaportarias" style="padding-bottom:150px">
+        <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+        <p:growl id="growl" showDetail="true" sticky="true" /> 
+  <p:panel>
+    <f:facet name="header">
+     <p:row>
+      <p align="center" id="listaportarias">
+       <p:column>LISTA DE PORTARIAS</p:column>
+      </p>
+     </p:row>
+    </f:facet>
+      
+   <p:row>
+    <p:column>
+     <p:dataTable id="listaportaria"  var="portaria" value="#{CadastroPort.listaPortaria}">
+      <p:column headerText="Data Início"><h:outputText value="#{portaria.dataInicioPort}"/></p:column>
+          
+      <p:column headerText="Data Fim"><h:outputText value="#{portaria.dataFimPort}"/></p:column>
+     
+      <p:column headerText="Ano Homologação"><h:outputText value="#{portaria.anoHomologPort}"/></p:column>
+     
+      <p:column headerText="Estado Portaria"><h:outputText value="#{portaria.estadoPort}"/></p:column>
+     
+      <p:column headerText="Funcionários Vinculados"><h:outputText value="#{portaria.funcionarios}"/></p:column>
+     
+      <p:column headerText="Motivo Portaria"><h:outputText value="#{portaria.espacoTextoPort}"/></p:column>
+     
+      <p:commandLink title="Visualizar" immediate="true" oncomplete="PF('dialogListaPortarias').show()" update=":formListaPortarias">
+       <i class="fa fa-eye"></i>
+       <f:setPropertyActionListener target="#{CadastroPort.portaria}" value="#{portaria}" />
+      </p:commandLink>
+      
+     </p:dataTable>
+    </p:column>
+   </p:row>
+  </p:panel>
+          
+    <p align="center">
+     <p:commandButton action="#{CadastroPort.listaPortar()}" update="listaportaria" value="Listar Portarias"/> 
+    </p>
+          
+  </h:form>
+ </h:body>
+</html>

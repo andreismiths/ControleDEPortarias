@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/META-INF/persistence.xml</file>
-            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/Entity/Funcionario.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/web/portaria/lista_Portaria.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/entity/Usuario.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/entity/Administrador.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/entity/Portaria.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/web/funcionario/cadastroFuncionario.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/entity/Funcionario.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/web/portaria/cadastroPortaria.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/bean/CadastroPortaria.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControlePortariasUfpa/src/java/entity/Status.java</file>
         </group>
     </open-files>
 </project-private>
