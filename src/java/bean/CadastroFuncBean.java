@@ -36,6 +36,7 @@ public class CadastroFuncBean extends AbstractMB {
     
     private List<Funcionario> listaFuncionario;
     
+    
         
     //Getters e Setters
 
@@ -64,7 +65,7 @@ public class CadastroFuncBean extends AbstractMB {
     }
 
     public List<Funcionario> getListaFuncionario() {
-        return listaFuncionario;
+        return funcdao.listar();
     }
 
     public void setListaFuncionario(List<Funcionario> listaFuncionario) {

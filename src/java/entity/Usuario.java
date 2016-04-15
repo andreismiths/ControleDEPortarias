@@ -22,7 +22,7 @@ public class Usuario implements Serializable {
        
     @Id
     @Column(name="Siape_Usuario")
-    String SiapeUsuario;   
+    String siapeUsuario;   
    
     @Column(name="CPF_Usuario")
     String cpfUsuario;
@@ -50,11 +50,11 @@ public class Usuario implements Serializable {
     // Getters e Setters
 
     public String getSiapeUsuario() {
-        return SiapeUsuario;
+        return siapeUsuario;
     }
 
-    public void setSiapeUsuario(String SiapeUsuario) {
-        this.SiapeUsuario = SiapeUsuario;
+    public void setSiapeUsuario(String siapeUsuario) {
+        this.siapeUsuario = siapeUsuario;
     }
 
     public String getCpfUsuario() {

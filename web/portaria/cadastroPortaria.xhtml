@@ -44,12 +44,10 @@ and open the template in the editor.
                 <p:inputText id="estadoport" placeholder="Estado Portaria" requiredMessage="Campo Estado Portaria Obrigatório!"
                              required="true" size="30" value="#{CadastroPort.portaria.estadoPort}"></p:inputText>
                              
-                <!--<p:selectOneMenu id="console" value="#{CadastroPort.portaria.funcionarios}" >
+                    <!--         <p:selectManyMenu id="console" value="#{CadastroPort.portaria.funcionarios}" converter="funcionariosConverter" >
                     <f:selectItem itemLabel="Funcionários Vinculados" itemValue="" />
-                    <f:selectItem itemLabel="Penha" itemValue="Penha" />
-                    <f:selectItem itemLabel="Sheila" itemValue="Sheila" />
-                    <f:selectItem itemLabel="Adailton" itemValue="Adailton" />
-                </p:selectOneMenu> -->
+                    <f:selectItems value="#{CadastroFunc.listaFuncionario}" var="funcionario" itemValue="#{funcionario.siapeUsuario}" itemLabel="#{funcionario.nomeUsuario}" />
+                             </p:selectManyMenu> -->
 
                 <p:inputTextarea rows="8" requiredMessage="Campo Motivo da Portaria Obrigatório!" required="true" 
                  placeholder="Digite aqui o motivo da portaria" cols="2" value="#{CadastroPort.portaria.espacoTextoPort}"/>
