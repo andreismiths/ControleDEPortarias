@@ -8,7 +8,8 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Cadastro Portaria | Controle Portarias</title>
         <h:outputStylesheet library="css" name="style.css" />
@@ -28,31 +29,31 @@ and open the template in the editor.
             <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
             <p:growl id="growl" showDetail="true" sticky="true" /> 
                 
-            
-            <p:panelGrid styleClass="painel_cadastro" columns="1" >
+             
+            <p:panelGrid style="width: 75%" styleClass="painel_cadastro" columns="1" >
                 <h2>CADASTRO DE PORTARIA</h2>
-                <p:inputText id="dataIni" placeholder="Data Início" size="5" value="#{CadastroPort.portaria.dataInicioPort}"
-                             required="true" style="width: 300px" requiredMessage="Campo Data Inicio Obrigatório!"></p:inputText>
+                <p:calendar id="dataIni" placeholder="Data Início" size="30" value="#{CadastroPort.portaria.dataInicioPort}"
+                             required="true" style="width: 300px" requiredMessage="Campo Data Inicio Obrigatório!"/>
                              
-                <p:inputText id="dataFim" placeholder="Data Fim" value="#{CadastroPort.portaria.dataFimPort}"
-                             required="true" style="width: 300px" requiredMessage="Campo  Data Fim Obrigatório!"></p:inputText>
+                <p:calendar id="dataFim" placeholder="Data Fim" size="30" value="#{CadastroPort.portaria.dataFimPort}"
+                             required="true" style="width: 300px" requiredMessage="Campo  Data Fim Obrigatório!"/>
                              
                 <p:inputText id="anoHomol" placeholder="Ano Homologação" value="#{CadastroPort.portaria.anoHomologPort}"
-                             required="true" style="width: 300px" requiredMessage="Campo Ano Homologação Obrigatório!"></p:inputText>
+                             required="true" size="30" requiredMessage="Campo Ano Homologação Obrigatório!"></p:inputText>
                              
                 <p:inputText id="estadoport" placeholder="Estado Portaria" requiredMessage="Campo Estado Portaria Obrigatório!"
-                             required="true" style="width: 300px" value="#{CadastroPort.portaria.estadoPort}"></p:inputText>
+                             required="true" size="30" value="#{CadastroPort.portaria.estadoPort}"></p:inputText>
                              
-                <!--<p:selectOneMenu id="console" value="" >
+                <!--<p:selectOneMenu id="console" value="#{CadastroPort.portaria.funcionarios}" >
                     <f:selectItem itemLabel="Funcionários Vinculados" itemValue="" />
                     <f:selectItem itemLabel="Penha" itemValue="Penha" />
                     <f:selectItem itemLabel="Sheila" itemValue="Sheila" />
                     <f:selectItem itemLabel="Adailton" itemValue="Adailton" />
-                </p:selectOneMenu>  -->
+                </p:selectOneMenu> -->
 
-                <p:inputTextarea rows="10" requiredMessage="Campo Motivo da Portaria Obrigatório!"
-                             required="true" placeholder="Digite aqui o motivo da portaria" cols="2" value="#{CadastroPort.portaria.espacoTextoPort}"/>
-                <p:commandButton action="#{CadastroPort.criaPort()}"  value="Salvar"/> 
+                <p:inputTextarea rows="8" requiredMessage="Campo Motivo da Portaria Obrigatório!" required="true" 
+                 placeholder="Digite aqui o motivo da portaria" cols="2" value="#{CadastroPort.portaria.espacoTextoPort}"/>
+                <p:commandButton id="botao" action="#{CadastroPort.criaPort()}"  value="Salvar"/> 
 
             </p:panelGrid>
             </h:form>

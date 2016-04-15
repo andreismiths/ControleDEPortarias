@@ -1,7 +1,6 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -24,11 +23,7 @@ public class Funcionario extends Usuario implements Serializable {
     @ManyToMany (mappedBy = "funcionarios")
     private List<Portaria> portarias;
 
-      public Funcionario() {
-        portarias = new ArrayList<Portaria>();
-        departanento="";
-        
-    } 
+    
      // getter e setters
 
     public String getDepartanento() {
@@ -54,7 +49,5 @@ public class Funcionario extends Usuario implements Serializable {
     public void setPortarias(List<Portaria> portarias) {
         this.portarias = portarias;
     }
-   
-    
-    
+      
 }

@@ -1,7 +1,7 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 @Entity
 @Table(name= "Portaria")
@@ -20,19 +21,7 @@ public class Portaria implements Serializable {
 
     @ManyToMany
     private List<Status> status;
-   
-    public Portaria() {
-        funcionarios = new ArrayList<Funcionario>();
-        status = new ArrayList<Status>();
-        protocoloPort="";
-        dataInicioPort="";
-        dataFimPort="";
-        anoHomologPort="";
-        espacoTextoPort="";
-        assinaturaPort="";
-        estadoPort="";
-    }
-    
+     
    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)    
@@ -43,10 +32,12 @@ public class Portaria implements Serializable {
     private String protocoloPort;
     
     @Column(name="Data_Inicio_Portaria")
-    private String dataInicioPort;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataInicioPort;
     
     @Column(name="Data_Fim_Portaria")
-    private String dataFimPort;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dataFimPort;
     
     @Column(name="Ano_Homologacao_Portaria")
     private String anoHomologPort;
@@ -96,19 +87,19 @@ public class Portaria implements Serializable {
         this.protocoloPort = protocoloPort;
     }
 
-    public String getDataInicioPort() {
+    public Date getDataInicioPort() {
         return dataInicioPort;
     }
 
-    public void setDataInicioPort(String dataInicioPort) {
+    public void setDataInicioPort(Date dataInicioPort) {
         this.dataInicioPort = dataInicioPort;
     }
 
-    public String getDataFimPort() {
+    public Date getDataFimPort() {
         return dataFimPort;
     }
 
-    public void setDataFimPort(String dataFimPort) {
+    public void setDataFimPort(Date dataFimPort) {
         this.dataFimPort = dataFimPort;
     }
 

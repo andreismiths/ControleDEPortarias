@@ -20,15 +20,7 @@ public class Status implements Serializable {
 
     @ManyToMany(mappedBy = "status")
     private List<Portaria> portarias;
-    
-      public Status() {
-        portarias = new ArrayList<Portaria>();
-        pendente="";
-        revogada="";
-        aprovada="";
-        finalizada="";
-    }
-    
+      
     
     @Id
     @Column(name="ID_Status")

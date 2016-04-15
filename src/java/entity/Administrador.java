@@ -14,10 +14,7 @@ public class Administrador  extends Usuario implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date ultimoLogin;
     
-    
-    public Administrador(){
-        
-    }
+  
     //Get e Set
 
     public Date getUltimoLogin() {

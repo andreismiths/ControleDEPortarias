@@ -5,31 +5,22 @@ package entity;
  * @author andreismiths
  */
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 @Entity
 @Table(name= "Usuario")
 @Inheritance(strategy = InheritanceType.JOINED) //henrança - serão criadas tabelas separadas para cada um. InheritanceType.JOINED, onde cada classe terá uma tabela
 public class Usuario implements Serializable {
    
-    public Usuario(){
-        SiapeUsuario="";
-        cpfUsuario="";
-        senhaUsuario="";
-        rgUsuario="";
-        nomeUsuario="";
-        dataNascimUsuario="";
-        sexoUsuario="";
-        emailUsuario="";
-    }
-      
-    @Id
        
+    @Id
     @Column(name="Siape_Usuario")
     String SiapeUsuario;   
    
@@ -45,8 +36,9 @@ public class Usuario implements Serializable {
     @Column(name="Nome_Usuario")
     String nomeUsuario;
     
+    @Temporal(javax.persistence.TemporalType.DATE)
     @Column(name="Data_Nascimento_Usuario")
-    String dataNascimUsuario;
+    Date dataNascimUsuario;
     
     @Column(name="Sexo_Usuario")
     String sexoUsuario;
@@ -97,11 +89,11 @@ public class Usuario implements Serializable {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public String getDataNascimUsuario() {
+    public Date getDataNascimUsuario() {
         return dataNascimUsuario;
     }
 
-    public void setDataNascimUsuario(String dataNascimUsuario) {
+    public void setDataNascimUsuario(Date dataNascimUsuario) {
         this.dataNascimUsuario = dataNascimUsuario;
     }
 
@@ -120,36 +112,5 @@ public class Usuario implements Serializable {
     public void setEmailUsuario(String emailUsuario) {
         this.emailUsuario = emailUsuario;
     }
-
-    
-/*
-    //equals e hash code;
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.SiapeUsuario);
-        hash = 47 * hash + Objects.hashCode(this.cpfUsuario);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Usuario other = (Usuario) obj;
-        if (!Objects.equals(this.SiapeUsuario, other.SiapeUsuario)) {
-            return false;
-        }
-        return Objects.equals(this.cpfUsuario, other.cpfUsuario);
-    }
-    */
-    
-    
+  
 }

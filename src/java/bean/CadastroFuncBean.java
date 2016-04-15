@@ -34,7 +34,7 @@ public class CadastroFuncBean extends AbstractMB {
     
     private String mensagem;
     
-     private List<Funcionario> listaFuncionario;
+    private List<Funcionario> listaFuncionario;
     
         
     //Getters e Setters
@@ -74,9 +74,19 @@ public class CadastroFuncBean extends AbstractMB {
     public void criaFunc (){
         funcdao.inserir(funcionario);
         
-        super.displayInfoMessageToUser("Funcionário Cadastrado!");
+        super.displayInfoMessageToUser("Funcionário Cadastrado com Sucesso!");
     }
     
+     public  void listandoFuncionario(){
+        listaFuncionario = funcdao.listar();
+         for (int i = 0; i <listaFuncionario.size(); i++) {
+            System.out.println(listaFuncionario.get(i).getNomeUsuario());
+            System.out.println(listaFuncionario.get(i).getDataNascimUsuario());
+            System.out.println(listaFuncionario.get(i).getEmailUsuario());
+            System.out.println(listaFuncionario.get(i).getDepartanento());
+            System.out.println(listaFuncionario.get(i).getSiapeUsuario());
+            System.out.println(listaFuncionario.get(i).getDataEntrada());
+             
+         }
+     }
 }
-
-

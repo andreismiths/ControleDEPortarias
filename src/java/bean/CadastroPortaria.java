@@ -17,9 +17,6 @@ import javax.inject.Inject;
 
 public class CadastroPortaria extends AbstractMB {
 
-    /**
-     * Creates a new instance of CadastroFuncBean
-     */
     @Inject
     private PortariaDAO portdao;
     
@@ -28,6 +25,7 @@ public class CadastroPortaria extends AbstractMB {
     private String mensagem;
     
     private List<Portaria> listaPortaria;
+    
     
     //Getters e Setters
 
@@ -69,18 +67,17 @@ public class CadastroPortaria extends AbstractMB {
         System.out.println("Funcionando criar..");
         portdao.inserir(portaria);
         
-        super.displayInfoMessageToUser("Portaria Cadastrada!");
+        super.displayInfoMessageToUser("Portaria Cadastrada com Sucesso!");
     }
     
-     public  void listaPortar(){
-         System.out.println("Funcionando..");
+     public  void listandoPortaria(){
         listaPortaria = portdao.listar();
          for (int i = 0; i <listaPortaria.size(); i++) {
              System.out.println(listaPortaria.get(i).getDataInicioPort());
              System.out.println(listaPortaria.get(i).getDataFimPort());
              System.out.println(listaPortaria.get(i).getAnoHomologPort());
              System.out.println(listaPortaria.get(i).getEstadoPort());
-             System.out.println(listaPortaria.get(i).getFuncionarios());
+            // System.out.println(listaPortaria.get(i).getFuncionarios());
              System.out.println(listaPortaria.get(i).getEspacoTextoPort());
              
          }
