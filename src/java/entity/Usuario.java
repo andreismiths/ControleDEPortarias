@@ -29,10 +29,7 @@ public class Usuario implements Serializable {
     
     @Column(name="Senha_Usuario")
     String senhaUsuario;
-    
-    @Column(name="RG_Usuario")
-    String rgUsuario;
-    
+        
     @Column(name="Nome_Usuario")
     String nomeUsuario;
     
@@ -40,12 +37,11 @@ public class Usuario implements Serializable {
     @Column(name="Data_Nascimento_Usuario")
     Date dataNascimUsuario;
     
-    @Column(name="Sexo_Usuario")
-    String sexoUsuario;
-    
     @Column(name="Email_Usuario")
     String emailUsuario;
     
+    @Column(name="Tipo_Usuario")
+    String tipoUsuario;
     
     // Getters e Setters
 
@@ -73,14 +69,6 @@ public class Usuario implements Serializable {
         this.senhaUsuario = senhaUsuario;
     }
 
-    public String getRgUsuario() {
-        return rgUsuario;
-    }
-
-    public void setRgUsuario(String rgUsuario) {
-        this.rgUsuario = rgUsuario;
-    }
-
     public String getNomeUsuario() {
         return nomeUsuario;
     }
@@ -97,20 +85,20 @@ public class Usuario implements Serializable {
         this.dataNascimUsuario = dataNascimUsuario;
     }
 
-    public String getSexoUsuario() {
-        return sexoUsuario;
-    }
-
-    public void setSexoUsuario(String sexoUsuario) {
-        this.sexoUsuario = sexoUsuario;
-    }
-
     public String getEmailUsuario() {
         return emailUsuario;
     }
 
     public void setEmailUsuario(String emailUsuario) {
         this.emailUsuario = emailUsuario;
+    }
+
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
   
 }

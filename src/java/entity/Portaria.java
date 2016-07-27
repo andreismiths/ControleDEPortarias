@@ -25,33 +25,27 @@ public class Portaria implements Serializable {
    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)    
-    @Column(name="Codigo_Portaria")
-    private Integer codigoPort;
+    @Column(name="Numero_Portaria")
+    private Integer numeroPort;
     
-    @Column(name="Protocolo_Portaria")
-    private String protocoloPort;
+    @Column(name="Ementa_Portaria")
+    private String ementaPort;
     
-    @Column(name="Data_Inicio_Portaria")
+    @Column(name="Data_Homologaçao")
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataInicioPort;
-    
-    @Column(name="Data_Fim_Portaria")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataFimPort;
-    
-    @Column(name="Ano_Homologacao_Portaria")
-    private String anoHomologPort;
-    
+    private Date dataHomologaPort;
+  
     @Column(name="Texto_Portaria")
     private String espacoTextoPort;
          
+    @Column(name="Vigencia")
+    private String vigencia;
+    
+    @Column(name="Projeto")
+    private String projeto;
+    
     @Column(name="Assinatura_Portaria")
     private String assinaturaPort;
-    
-    @Column(name="Estado_Portaria")
-    private String estadoPort;
-
-  
 
     //getters e setters
 
@@ -71,46 +65,6 @@ public class Portaria implements Serializable {
         this.status = status;
     }
 
-    public Integer getCodigoPort() {
-        return codigoPort;
-    }
-
-    public void setCodigoPort(Integer codigoPort) {
-        this.codigoPort = codigoPort;
-    }
-
-    public String getProtocoloPort() {
-        return protocoloPort;
-    }
-
-    public void setProtocoloPort(String protocoloPort) {
-        this.protocoloPort = protocoloPort;
-    }
-
-    public Date getDataInicioPort() {
-        return dataInicioPort;
-    }
-
-    public void setDataInicioPort(Date dataInicioPort) {
-        this.dataInicioPort = dataInicioPort;
-    }
-
-    public Date getDataFimPort() {
-        return dataFimPort;
-    }
-
-    public void setDataFimPort(Date dataFimPort) {
-        this.dataFimPort = dataFimPort;
-    }
-
-    public String getAnoHomologPort() {
-        return anoHomologPort;
-    }
-
-    public void setAnoHomologPort(String anoHomologPort) {
-        this.anoHomologPort = anoHomologPort;
-    }
-
     public String getEspacoTextoPort() {
         return espacoTextoPort;
     }
@@ -127,13 +81,4 @@ public class Portaria implements Serializable {
         this.assinaturaPort = assinaturaPort;
     }
 
-    public String getEstadoPort() {
-        return estadoPort;
-    }
-
-    public void setEstadoPort(String estadoPort) {
-        this.estadoPort = estadoPort;
-    }
-    
-    
 }

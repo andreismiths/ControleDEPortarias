@@ -73,10 +73,7 @@ public class CadastroPortaria extends AbstractMB {
      public  void listandoPortaria(){
         listaPortaria = portdao.listar();
          for (int i = 0; i <listaPortaria.size(); i++) {
-             System.out.println(listaPortaria.get(i).getDataInicioPort());
-             System.out.println(listaPortaria.get(i).getDataFimPort());
-             System.out.println(listaPortaria.get(i).getAnoHomologPort());
-             System.out.println(listaPortaria.get(i).getEstadoPort());
+            
             // System.out.println(listaPortaria.get(i).getFuncionarios());
              System.out.println(listaPortaria.get(i).getEspacoTextoPort());
              
