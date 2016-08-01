@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+        template="/WEB-INF/templates/Adm_Layout.xhtml">
+	
+<ui:define name="content">
+<h1 class="aw-page-title">Nova Portaria</h1>
+                        
+
+<p:tab title="Portaria" rendered="true">
+<h:form id="ReservarRecurso" class="ui-fluid">
+
+<p:panelGrid columns="2" layout="grid" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4">
+
+<p:outputLabel value="Número Portaria:"/>
+<p:inputText  placeholder="Número Portaria"/>
+<p:outputLabel value="Ementa:"/>
+<p:inputText placeholder="Ementa"/>
+
+<p:outputLabel value="Data Homologação:"/>
+<p:calendar id="dataHomolog" required="true" maxlength="10" requiredMessage="Digite a data de Homologação!" 
+            locale="de" navigator="true" pattern="yyyy-mm-dd"/>
+
+<p:outputLabel value="Nome recurso:"/>
+<p:inputText disabled="true" value=""/>
+
+<p:outputLabel for="Razao" value="Razão:"/>
+<p:inputTextarea class="maiuscula" id="Razao" required="true" requiredMessage="Informe sua razão!" maxlength="255" value=""/>
+
+<p:outputLabel for="data" value="Data de sua reserva:"/>
+<p:calendar id="data" required="true" maxlength="10" requiredMessage="Escolha uma data para a reserva!" locale="de" navigator="true" 
+            pattern="yyyy-mm-dd" value=""/>
+
+<p:outputLabel for="hora" value="Hora de sua reserva:"/>
+<p:calendar id="hora" pattern="HH:mm" timeOnly="true" maxlength="5" required="true" requiredMessage="Coloque a hora de sua reserva!"/>
+
+<p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                                
+<p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+<h:outputText value="German:"/>
+<h:outputText>
+<f:convertDateTime pattern="MM/dd/yyyy"/>
+</h:outputText>
+
+<h:outputText value="Time:"/>
+<h:outputText>
+<f:convertDateTime pattern="HH:mm"/>
+</h:outputText>
+
+</p:panelGrid>
+</p:dialog>
+</p:panelGrid>
+
+<p:panelGrid columns="3" layout="grid" style="margin-top: 25px" styleClass="panelgrid-noborder" 
+             columnClasses="ui-grid-col-2,ui-grid-col-2,ui-grid-col-2">
+
+<p:button id="Voltar" icon="fa fa-undo" value="Voltar" outcome="/Telas/PaginaInicial"/>
+
+<p:commandButton type="reset" id="LimparCampos" icon="fa fa-eraser" value="Limpar" action="#"/>
+
+<p:commandButton id="SalvarNovoUsuario" icon="fa fa-save" value="Salvar"/>
+</p:panelGrid>
+</h:form>
+</p:tab>
+</ui:define>
+</ui:composition>

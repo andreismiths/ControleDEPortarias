@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+    
+<p:panelMenu class="aw-menu" style="border: 0px; background: none">     
+<p:submenu class="menuitem" label="MENU" icon="fa fa-bars">
+        
+  <p:submenu label="PORTARIA">
+    <p:menuitem class="menuitem" value="Nova Portaria" outcome="/Telas/NovaPortaria" icon="fa fa-file-text"/>
+    <p:menuitem class="menuitem" value="Portarias Cadastradas" outcome="/Telas/SelecionarFaculdade" icon="fa fa-archive"/>
+  </p:submenu>
+  <p:submenu label="USUÁRIO">
+    <p:menuitem class="menuitem" value="Novo Usuário" outcome="/Telas/NovoUsuario" icon="fa fa-user-plus"/>
+    <p:menuitem class="menuitem" value="Editar usuário" outcome="/Telas/AdmUsuarioEditar" icon="fa fa-pencil"/>
+    <p:menuitem class="menuitem" value="Excluir usuário" outcome="/Telas/AdmUsuarioExcluir" icon="fa fa-user-times"/>
+  </p:submenu>
+  <p:submenu label="RELATÓRIO">
+    <p:menuitem class="menuitem" value="Novo Relatório" outcome="/Telas/AdmRecursoNovo" icon="fa fa-plus"/>
+    <p:menuitem class="menuitem" value="Histórico de Relatórios" outcome="/Telas/AdmRecursoEditar" icon="fa fa-list-ol"/>
+  </p:submenu>
+</p:submenu>
+</p:panelMenu>
+</ui:composition>
