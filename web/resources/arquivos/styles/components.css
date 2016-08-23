@@ -22,7 +22,7 @@
 	display: block;
 	padding: 10px 15px;
 	
-	text-decoration: none;
+	text-decoration: #f60104;
 	font-weight: 500;
 	color: #373737;
 } 
@@ -46,7 +46,7 @@
 }
 
 .menuitem {
-    margin-left: 25px;
+    margin-left: auto;
 }
 
 /* PAGE-TITLE */
