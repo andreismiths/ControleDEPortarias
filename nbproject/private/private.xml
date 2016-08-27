@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/resources/arquivos/images/logopedagogia.jpg</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/resources/arquivos/images/banner_controle_portarias.png</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/WEB-INF/login.xhtml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/Telas/PaginaInicial.xhtml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/WEB-INF/templates/Adm_Menu.xhtml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/WEB-INF/faces-config.xml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/WEB-INF/web.xml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/Telas/SelecionarFaculdade.xhtml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/index.xhtml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/resources/arquivos/images/FaculdadeMatematica.jpg</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/WEB-INF/glassfish-resources.xml</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/resources/arquivos/images/logoedfisica.jpg</file>
-            <file>file:/E:/Documents/UFPA/TCC/Projeto/ControleDePortarias/web/Telas/NovoUsuario.xhtml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -10,6 +10,10 @@
         background-color: #f60104;
 }
 
+.bannerloginlayout {
+    vertical-align: central;
+}
+
 .aw-topbar-banner {
 	position: fixed;
 	top: 0;
