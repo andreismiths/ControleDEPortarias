@@ -22,16 +22,16 @@
 </h:head>
 <h:body>
    
-<header class="aw-topbar-banner">
-    <h:graphicImage id="banner1" width="321px" height= "41px" library="arquivos" name="images/banner_controle_portarias.png"/>
-<a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
-       
-<div class="aw-toggle fa fa-user" style="cursor: pointer">   PERFIL</div>
-</header>
-
+<h:graphicImage class="banneradmlayout" library="arquivos" name="images/banner_controle_portarias.png"/>
+ 
+    <div class="aw-toggle" style="cursor: pointer">MENU</div>
+    <a href="#" class="aw-toggle  js-toggle">MENU<i class="fa  fa-bars"></i></a>
+    
+<!--  ISSO É O MENU // SIDEBAR É A CONF DELE NO CSS-->
 <aside class="aw-sidebar  js-sidebar">
 <ui:include src="Adm_Menu.xhtml"/>
 </aside>
+    
 
 <section class="aw-content  js-content">
 <ui:insert name="content"/>

@@ -7,11 +7,11 @@
 	
 <ui:define name="content">
  <h1 class="aw-page-title">Novo Usuário</h1>
-  <h:form id="NovoUsuario">
+  <h:form class="novoUsuario">
    <div class="ui-fluid">
     <p:messages  id="messages" autoUpdate="true" closable="true"/>
     
-     <p:panelGrid columns="2" layout="grid" style="margin-top: 20px;" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4">
+     <p:panelGrid columns="2" layout="grid" style="margin-top: 20px;" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4"> 
                  
      <p:outputLabel for="nome" value="Nome"/>
      <p:inputText class="maiuscula" id="nome" required="true" requiredMessage="Digite seu nome!" value="#{CadastroFunc.funcionario.nomeUsuario}"/>
@@ -61,7 +61,6 @@
      </p:panelGrid>
    </div>
  </h:form>            
-            
-	</ui:define>
+</ui:define>
 	
 </ui:composition>

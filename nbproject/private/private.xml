@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/resources/arquivos/styles/layout.css</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/WEB-INF/templates/Adm_Layout.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/WEB-INF/templates/Adm_Menu.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/Telas/Login.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/WEB-INF/templates/Login_Layout.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/resources/arquivos/styles/components.css</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/Telas/NovoUsuario.xhtml</file>
+        </group>
     </open-files>
 </project-private>

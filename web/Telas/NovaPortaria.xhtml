@@ -6,11 +6,11 @@
         template="/WEB-INF/templates/Adm_Layout.xhtml">
 	
 <ui:define name="content">
-    <h1 class="aw-page-title">Nova Portaria</h1> 
+   <!--  <h1 class="aw-page-title">Nova Portaria</h1> 
    
-                      
+                     
 <p:tab title="Portaria" rendered="true">
-<h:form id="ReservarRecurso" class="ui-fluid">
+    <h:form id="NovaPortaria" style="margin-left: auto" class="ui-fluid">
 
 <p:panelGrid columns="2" layout="grid" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4">
 
@@ -52,7 +52,7 @@
 <p:inputTextarea class="maiuscula" id="Razao" required="true" requiredMessage="Informe sua razão!" maxlength="255" value=""/>
 
 
-   <h:outputLabel for="minMax" value="Vigência:* " />
+   <h:outputLabel for="minMax" value="Vigência em meses:* " />
    <p:spinner id="minMax" value="#{spinnerView.number3}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
 
 <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
@@ -61,11 +61,6 @@
 <h:outputText value="German:"/>
 <h:outputText>
 <f:convertDateTime pattern="MM/dd/yyyy"/>
-</h:outputText>
-
-<h:outputText value="Time:"/>
-<h:outputText>
-<f:convertDateTime pattern="HH:mm"/>
 </h:outputText>
 
 </p:panelGrid>
@@ -81,5 +76,114 @@
     
 </h:form>
 </p:tab>
+    -->
+    
+    
+    <!-- TESTANDO WIZARD -->
+    
+    
+    <h:form id="NovaPortaria" style="margin-left: auto" class="ui-fluid">
+                 
+    <p:growl id="growl" sticky="true" showDetail="true"/>
+ 
+    <p:wizard flowListener="#{userWizard.onFlowProcess}">
+        <p:tab id="personal" title="Nova Portaria">
+            <p:panel header="Personal Details">
+                <p:messages />
+                <h:panelGrid columns="2" columnClasses="label, value">
+                    <p:outputLabel value="Número Portaria:*" />
+<p:inputText  placeholder="Informe Numero da Portaria"/>
+<p:outputLabel value="Ementa:*"/>
+<p:inputText placeholder="Informe a Ementa"/>
+
+<p:outputLabel value="Data Homologação: *" />
+<p:calendar id="dataHomolog" required="true" maxlength="10"  
+            locale="de" navigator="true" pattern="yyyy-mm-dd"/>
+
+<p:outputLabel value="Projeto*"/>
+<p:selectOneMenu id="city"  effect="fold" editable="true">
+            <f:selectItem itemLabel="Pesquisa" itemValue="" />
+            <f:selectItem itemLabel="Extensão" itemValue="" />
+            <f:selectItem itemLabel="Ensino" itemValue="" />  
+            
+             </p:selectOneMenu>
+<p:outputLabel for="console" value="Quatidade de Professores: *" />
+        <p:selectOneRadio id="console" value="#{radioView.console}">
+            <f:selectItem itemLabel="1" itemValue="1" />
+            <f:selectItem itemLabel="2" itemValue="2" />
+            <f:selectItem itemLabel="3" itemValue="3" /> 
+            <f:selectItem itemLabel="4" itemValue="4" />
+             <f:selectItem itemLabel="5" itemValue="5" />
+              <f:selectItem itemLabel="6" itemValue="6" />
+        </p:selectOneRadio>
+ <p:outputLabel value="Professor:*"/>
+<p:selectOneMenu id="city2"  effect="fold" editable="true" requiredMessage="Selecione o Professor">
+            <f:selectItem itemLabel="Bruno Lyra" itemValue="" />
+            <f:selectItem itemLabel="João Chamma" itemValue="" />
+             <f:selectItem itemLabel="Marcos Seruffo" itemValue="" />
+              <f:selectItem itemLabel="Yomara Pires" itemValue="" />
+               <f:selectItem itemLabel="Marcelino Silva" itemValue="" />
+                <f:selectItem itemLabel="José Jailton" itemValue="" />
+               </p:selectOneMenu>
+<p:outputLabel for="Razao" value="Razão:"/>
+<p:inputTextarea class="maiuscula" id="Razao" required="true" requiredMessage="Informe sua razão!" maxlength="255" value=""/>
+
+
+   <h:outputLabel for="minMax" value="Vigência em meses:* " />
+   <p:spinner id="minMax" value="#{spinnerView.number3}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
+
+  
+
+             </h:panelGrid>
+                  
+               
+            </p:panel>
+        </p:tab>
+        <p:tab id="confirm" title="Confirme os Dados">
+            <p:panel header="Confirme os Dados">
+                <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
+                    <h:panelGrid columns="2" columnClasses="label, value">
+                        <h:outputText value="Firstname: " />
+                        <h:outputText value="#{userWizard.user.firstname}" styleClass="outputLabel"/>
+ 
+                        <h:outputText value="Lastname: " />
+                        <h:outputText value="#{userWizard.user.lastname}" styleClass="outputLabel"/>
+ 
+                        <h:outputText value="Age: " />
+                        <h:outputText value="#{userWizard.user.age}" styleClass="outputLabel"/>
+                    </h:panelGrid>
+ 
+                    <h:panelGrid columns="2" columnClasses="label, value">
+                        <h:outputText value="Street: " />
+                        <h:outputText value="#{userWizard.user.street}" styleClass="outputLabel"/>
+ 
+                        <h:outputText value="Postal: " />
+                        <h:outputText value="#{userWizard.user.postalCode}" styleClass="outputLabel"/>
+ 
+                        <h:outputText value="City: " />
+                        <h:outputText value="#{userWizard.user.city}" styleClass="outputLabel"/>
+                    </h:panelGrid>
+ 
+                    <h:panelGrid columns="2" columnClasses="label, value">
+                        <h:outputText value="Email: " />
+                        <h:outputText value="#{userWizard.user.email}" styleClass="outputLabel"/>
+ 
+                        <h:outputText value="Phone " />
+                        <h:outputText value="#{userWizard.user.phone}" styleClass="outputLabel"/>
+ 
+                        <h:outputText value="Info: " />
+                        <h:outputText value="#{userWizard.user.info}" styleClass="outputLabel"/>
+ 
+                        <h:outputText />
+                        <h:outputText />
+                    </h:panelGrid>
+                </h:panelGrid>
+ 
+                <p:commandButton value="Salvar" actionListener="#{userWizard.save}" update="growl" process="@this"/>
+            </p:panel>
+        </p:tab>
+    </p:wizard>
+ 
+</h:form>
 </ui:define>
 </ui:composition>

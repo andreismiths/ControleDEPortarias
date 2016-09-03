@@ -2,8 +2,9 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
         xmlns:p="http://primefaces.org/ui">
 
-<p:panelMenu class="aw-menu" style="border: 0px; background: none">     
-<p:submenu label="MENU" icon="fa fa-bars">
+<!--<p:menu class="aw-menu">   -->   
+<!--<p:submenu label="MENU" icon="fa fa-bars">-->
+     <p:menu class="aw-menu" toggleable="true" style="border: 0px; background: none;">
         
   <p:submenu label="PORTARIA">
     <p:menuitem class="menuitem" value="Nova Portaria" outcome="/Telas/NovaPortaria" icon="fa fa-file-text"/>
@@ -21,7 +22,5 @@
     <p:submenu label="FACULADES">
     <p:menuitem class="menuitem" value="Selecionar Faculdade" outcome="/Telas/SelecionarFaculdade" icon="fa fa-arrows"/>
      </p:submenu>
-</p:submenu>
-</p:panelMenu>
-        
+</p:menu>
 </ui:composition>
