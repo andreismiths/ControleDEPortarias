@@ -42,15 +42,16 @@
      
      <p:outputLabel for="senha1" value="Senha:"/>
      <p:password id="senha1" feedback="true" inline="true" match="senha2" required="true" requiredMessage="Digite sua senha!" 
-        value="#"/>
+                 value="#{CadastroFunc.funcionario.senhaUsuario}"/>
                         
      <p:outputLabel for="senha2" value="Confirme a senha:"/>
-     <p:password id="senha2" feedback="true" inline="true" required="true" requiredMessage="Digite novamente sua senha!"/>                    
+     <p:password id="senha2" feedback="true" inline="true" required="true" requiredMessage="Digite novamente sua senha!"
+                 value="#{CadastroFunc.funcionario.senhaUsuario}"/>                    
                      
      <p:outputLabel for="tipo_usuario" value="Tipo de usuário:"/>
-     <p:selectOneButton id="tipo_usuario" required="true" requiredMessage="Escolha o status" value="#" >
-        <f:selectItem itemLabel="Professor" itemValue="true"/>
-        <f:selectItem itemLabel="Administrador" itemValue="false"/>
+     <p:selectOneButton id="tipo_usuario" required="true" requiredMessage="Defina Seu Usuário!" value="#{CadastroFunc.funcionario.tipoUsuario}" >
+        <f:selectItem itemLabel="Professor" itemValue="Professor"/>
+        <f:selectItem itemLabel="Administrador" itemValue="Administrador"/>
      </p:selectOneButton>
      </p:panelGrid>
                           

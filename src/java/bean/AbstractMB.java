@@ -9,6 +9,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.context.RequestContext;
+import org.primefaces.event.FlowEvent;
 import util.JSFMessageUtil;
 
 public class AbstractMB implements Serializable {
@@ -17,6 +18,31 @@ public class AbstractMB implements Serializable {
 
     private static final String KEEP_DIALOG_OPENED = "KEEP_DIALOG_OPENED";
 
+    private boolean skip;
+    
+    
+    
+     //skip funçoes do wizard p visualizar dados antes de gerar portaria
+    
+    public boolean isSkip() {
+        return skip;
+    }
+ 
+    public void setSkip(boolean skip) {
+        this.skip = skip;
+    }
+    
+      public String onFlowProcess(FlowEvent event) {
+        if(skip) {
+            skip = false;   //reset in case user goes back
+            return "confirm";
+        }
+        else {
+            return event.getNewStep();
+        }  
+    }
+    
+    
     public AbstractMB() {
         super();
     }

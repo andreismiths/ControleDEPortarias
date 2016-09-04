@@ -1,5 +1,6 @@
 package entity;
 
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -49,5 +50,11 @@ public class Funcionario extends Usuario implements Serializable {
     public void setPortarias(List<Portaria> portarias) {
         this.portarias = portarias;
     }
-      
+     
+        
+     public Funcionario PegaNomeUsuario (String nomeUsuario){
+        return  .get(nomeUsuario);
+    }
+     
+     
 }

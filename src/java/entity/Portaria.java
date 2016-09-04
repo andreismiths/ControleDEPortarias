@@ -81,4 +81,46 @@ public class Portaria implements Serializable {
         this.assinaturaPort = assinaturaPort;
     }
 
+    public Integer getNumeroPort() {
+        return numeroPort;
+    }
+
+    public void setNumeroPort(Integer numeroPort) {
+        this.numeroPort = numeroPort;
+    }
+
+    public String getEmentaPort() {
+        return ementaPort;
+    }
+
+    public void setEmentaPort(String ementaPort) {
+        this.ementaPort = ementaPort;
+    }
+
+    public Date getDataHomologaPort() {
+        return dataHomologaPort;
+    }
+
+    public void setDataHomologaPort(Date dataHomologaPort) {
+        this.dataHomologaPort = dataHomologaPort;
+    }
+
+    public String getVigencia() {
+        return vigencia;
+    }
+
+    public void setVigencia(String vigencia) {
+        this.vigencia = vigencia;
+    }
+
+    public String getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(String projeto) {
+        this.projeto = projeto;
+    }
+    
+      
+
 }

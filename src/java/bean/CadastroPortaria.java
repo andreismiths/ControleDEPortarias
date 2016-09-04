@@ -61,7 +61,10 @@ public class CadastroPortaria extends AbstractMB {
         this.listaPortaria = listaPortaria;
     }
     
-    //Funções
+    
+       
+    
+     //Funções
 
     public void criaPort() {
         System.out.println("Funcionando criar..");
@@ -78,7 +81,7 @@ public class CadastroPortaria extends AbstractMB {
              System.out.println(listaPortaria.get(i).getEspacoTextoPort());
              
          }
-     }
+     }  
 }
 
     
