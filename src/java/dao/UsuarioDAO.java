@@ -1,5 +1,6 @@
 package dao;
 
+import entity.Funcionario;
 import javax.ejb.Stateless;
 import repositorio.RepositorioImpl;
 import entity.Usuario;
@@ -12,5 +13,6 @@ import entity.Usuario;
 
 @Stateless
 public class UsuarioDAO extends RepositorioImpl<Usuario> {
-    
+
+ 
 }

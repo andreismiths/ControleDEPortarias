@@ -6,6 +6,7 @@ package entity;
  */
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -100,10 +101,40 @@ public class Usuario implements Serializable {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
+   
     
+    
+    /*
     @Override
     public String toString() {
-        return getNomeUsuario();
+    return String.format("%s[siape%d]", getClass().getSimpleName(), getSiapeUsuario());
+    }     
+   */
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 73 * hash + Objects.hashCode(this.siapeUsuario);
+        return hash;
     }
-  
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Usuario other = (Usuario) obj;
+        if (!Objects.equals(this.siapeUsuario, other.siapeUsuario)) {
+            return false;
+        }
+        return true;
+    }
+
+    
 }

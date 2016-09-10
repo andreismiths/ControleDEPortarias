@@ -5,9 +5,9 @@
  */
 package bean;
 
+import entity.Funcionario;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import entity.Funcionario;
 import dao.FuncionarioDAO;
 import java.util.List;
 import javax.inject.Inject;
@@ -89,6 +89,8 @@ public class CadastroFuncBean extends AbstractMB {
              
          }
      }
+     
+     
   
 }
 

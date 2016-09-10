@@ -1,6 +1,8 @@
 package entity;
 
 
+import entity.Portaria;
+import entity.Usuario;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -8,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
+import static javax.ws.rs.client.Entity.entity;
 
 
 @Entity(name="Funcionario")
@@ -51,10 +54,6 @@ public class Funcionario extends Usuario implements Serializable {
         this.portarias = portarias;
     }
      
-        
-     public Funcionario PegaNomeUsuario (String nomeUsuario){
-        return  .get(nomeUsuario);
-    }
-     
+
      
 }

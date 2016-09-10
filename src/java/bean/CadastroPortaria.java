@@ -6,6 +6,7 @@ import entity.Portaria;
 import dao.PortariaDAO;
 import java.util.List;
 import javax.inject.Inject;
+import org.primefaces.event.FlowEvent;
 
 /**
  *
@@ -26,7 +27,7 @@ public class CadastroPortaria extends AbstractMB {
     
     private List<Portaria> listaPortaria;
     
-    
+    private boolean skip;
     //Getters e Setters
 
     public PortariaDAO getPortdao() {
@@ -81,7 +82,28 @@ public class CadastroPortaria extends AbstractMB {
              System.out.println(listaPortaria.get(i).getEspacoTextoPort());
              
          }
-     }  
+     }
+     
+     
+      //skip funçoes do wizard p visualizar dados antes de gerar portaria
+    /*
+    public boolean isSkip() {
+        return skip;
+    }
+ 
+    public void setSkip(boolean skip) {
+        this.skip = skip;
+    }
+    
+      public String onFlowProcess(FlowEvent event) {
+        if(skip) {
+            skip = false;   //reset in case user goes back
+            return "confirm";
+        }
+        else {
+            return event.getNewStep();
+        }  
+    }*/
 }
 
     
