@@ -15,14 +15,14 @@
             <p:messages  id="messages" autoUpdate="true" closable="true" showDetail="true" />
             <p:panelGrid columns="1"  layout="grid"  styleClass="panelgrid-noborder" >
             
-            <h:form id="EditarRecurso" >
+            <h:form id="Relarórios" >
                 <p:dataTable id="recursoBuscados"
                              var="recurso" 
                              value="#{cadrecurso.recursoBuscados}" 
                              editable="true" reflow="true" >
                     
                     <f:facet name="header">
-                        Editar Recurso
+                        Relarórios
                     </f:facet>
                     
                     <!-- <p:ajax event="rowEdit" listener="#" /> --> 
@@ -46,36 +46,12 @@
                             <f:facet name="input">
                                 <p:inputText class="maiuscula" value="#{recurso.nome}" 
                                              placeholder="#{recurso.nome}"
-                                             maxlength="255"
+                                             maxlength="50"
                                              style="width: 100%;" />
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
-                    
-                    <p:column headerText="Local" >
-                        <p:cellEditor>
-                            <f:facet name="output"><p:outputLabel value="#{recurso.local}" /></f:facet>
-                            <f:facet name="input">
-                                <p:inputText class="maiuscula" value="#{recurso.local}" 
-                                             placeholder="#{recurso.local}"
-                                             maxlength="255"
-                                             style="width: 100%;" />
-                            </f:facet>
-                        </p:cellEditor>
-                    </p:column>
-                    
-                    <p:column headerText="Descrição" >
-                        <p:cellEditor>
-                            <f:facet name="output"><p:outputLabel value="#{recurso.descricao}" /></f:facet>
-                            <f:facet name="input">
-                                <p:inputTextarea class="maiuscula" value="#{recurso.descricao}" 
-                                             placeholder="#{recurso.descricao}"
-                                             maxlength="255"
-                                             style="width: 100%;" />
-                            </f:facet>
-                        </p:cellEditor>
-                    </p:column>
-                    
+                                        
                     <p:column headerText="Status" width="110" >
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{recurso.statusTexto}" /></f:facet>

@@ -33,7 +33,7 @@
 
                          <p:outputLabel value="Professor:*"/>
                          <p:selectOneMenu filter="true"  value="#{CadastroPort.portaria.funcionarios}"
-                                          converter="funcionarioConverter" requiredMessage="Selecione o Professor">
+                                          converter="funcionariosConverter" requiredMessage="Selecione o Professor">
                              <f:selectItem noSelectionOption="true" itemLabel="Selecione um Professor"/>
                             <f:selectItems value="#{CadastroFunc.listaFuncionario}" var="funcionario" 
                                            itemValue="#{funcionario}" itemLabel="#{funcionario.nomeUsuario}" />

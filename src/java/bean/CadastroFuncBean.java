@@ -81,11 +81,12 @@ public class CadastroFuncBean extends AbstractMB {
         listaFuncionario = funcdao.listar();
          for (int i = 0; i <listaFuncionario.size(); i++) {
             System.out.println(listaFuncionario.get(i).getNomeUsuario());
+            System.out.println(listaFuncionario.get(i).getCpfUsuario());
+            System.out.println(listaFuncionario.get(i).getSiapeUsuario());
             System.out.println(listaFuncionario.get(i).getDataNascimUsuario());
             System.out.println(listaFuncionario.get(i).getEmailUsuario());
-            System.out.println(listaFuncionario.get(i).getDepartanento());
-            System.out.println(listaFuncionario.get(i).getSiapeUsuario());
-            System.out.println(listaFuncionario.get(i).getDataEntrada());
+            System.out.println(listaFuncionario.get(i).getSenhaUsuario());
+            System.out.println(listaFuncionario.get(i).getTipoUsuario());
              
          }
      }
