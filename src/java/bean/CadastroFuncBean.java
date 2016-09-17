@@ -73,6 +73,8 @@ public class CadastroFuncBean extends AbstractMB {
         this.listaFuncionario = listaFuncionario;
     }
     
+    
+    
     public void criaFunc (){
         funcdao.inserir(funcionario);
         super.displayInfoMessageToUser("Funcionário Cadastrado com Sucesso!");

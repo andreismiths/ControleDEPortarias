@@ -13,6 +13,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Named;
 import entity.Funcionario;
+import entity.Portaria;
 import javax.faces.application.FacesMessage;
 import javax.faces.convert.ConverterException;
 

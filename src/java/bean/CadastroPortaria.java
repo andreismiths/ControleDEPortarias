@@ -27,24 +27,24 @@ public class CadastroPortaria extends AbstractMB {
     private String mensagem;
     
     private List<Portaria> listaPortaria;
+        
+    private Funcionario FuncionarioSelecionado;
     
-    private List<Funcionario> listaFuncionario;
     
-    private List<Funcionario> funcionarioSelecionado;
     
     private boolean skip;
     
 
 //Getters e Setters
 
-    public List<Funcionario> getFuncionarioSelecionado() {
-        return funcionarioSelecionado;
+    public Funcionario getFuncionarioSelecionado() {
+        return FuncionarioSelecionado;
     }
 
-    public void setFuncionarioSelecionado(List<Funcionario> funcionarioSelecionado) {
-        this.funcionarioSelecionado = funcionarioSelecionado;
+    public void setFuncionarioSelecionado(Funcionario FuncionarioSelecionado) {
+        this.FuncionarioSelecionado = FuncionarioSelecionado;
     }
-    
+
     public PortariaDAO getPortdao() {
         return portdao;
     }
@@ -77,14 +77,9 @@ public class CadastroPortaria extends AbstractMB {
         this.listaPortaria = listaPortaria;
     }
 
-    public List<Funcionario> getListaFuncionario() {
-        return listaFuncionario;
-    }
+ 
 
-    public void setListaFuncionario(List<Funcionario> listaFuncionario) {
-        this.listaFuncionario = listaFuncionario;
-    }
-    
+ 
     
          
     
@@ -136,30 +131,7 @@ public class CadastroPortaria extends AbstractMB {
         }  
     }*/
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.listaFuncionario);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final CadastroPortaria other = (CadastroPortaria) obj;
-        if (!Objects.equals(this.listaFuncionario, other.listaFuncionario)) {
-            return false;
-        }
-        return true;
-    }
+   
 }
 
     

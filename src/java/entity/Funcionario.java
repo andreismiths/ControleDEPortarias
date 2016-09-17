@@ -1,6 +1,7 @@
 package entity;
 
 
+import com.xpert.faces.conversion.ConverterId;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -17,6 +18,7 @@ import javax.persistence.Temporal;
 public class Funcionario implements Serializable {
     
     @Id
+    @ConverterId
     @Column(name="Siape_Usuario")
     Integer siapeUsuario;   
    
@@ -143,18 +145,8 @@ public class Funcionario implements Serializable {
     public void setFuncionario(List<Funcionario> funcionario) {
         this.funcionario = funcionario;
     }
-    
-    
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.portarias);
-        hash = 89 * hash + Objects.hashCode(this.funcionario);
-        return hash;
-    }
-
-    @Override
+        @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -166,15 +158,12 @@ public class Funcionario implements Serializable {
             return false;
         }
         final Funcionario other = (Funcionario) obj;
-        if (!Objects.equals(this.portarias, other.portarias)) {
-            return false;
-        }
-        if (!Objects.equals(this.funcionario, other.funcionario)) {
+        if (!Objects.equals(this.siapeUsuario, other.siapeUsuario)) {
             return false;
         }
         return true;
     }
-     
+    
+    
 
-     
 }
