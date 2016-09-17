@@ -14,7 +14,7 @@
      <p:panelGrid columns="2" layout="grid" style="margin-top: 20px;" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4"> 
                  
      <p:outputLabel for="nome" value="Nome"/>
-     <p:inputText class="maiuscula" id="nome" required="true" requiredMessage="Digite seu nome!" value="#{CadastroFunc.funcionario.nomeUsuario}"/>
+     <p:inputText id="nome" required="true" requiredMessage="Digite seu nome!" value="#{CadastroFunc.funcionario.nomeUsuario}"/>
 
      <p:outputLabel for="cpf" value="CPF:"/>
      <p:inputText id="cpf" maxlength="11" required="true" requiredMessage="Digite seu CPF!" value="#{CadastroFunc.funcionario.cpfUsuario}"/>

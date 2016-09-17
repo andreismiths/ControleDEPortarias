@@ -30,9 +30,21 @@ public class CadastroPortaria extends AbstractMB {
     
     private List<Funcionario> listaFuncionario;
     
+    private List<Funcionario> funcionarioSelecionado;
+    
     private boolean skip;
-    //Getters e Setters
+    
 
+//Getters e Setters
+
+    public List<Funcionario> getFuncionarioSelecionado() {
+        return funcionarioSelecionado;
+    }
+
+    public void setFuncionarioSelecionado(List<Funcionario> funcionarioSelecionado) {
+        this.funcionarioSelecionado = funcionarioSelecionado;
+    }
+    
     public PortariaDAO getPortdao() {
         return portdao;
     }

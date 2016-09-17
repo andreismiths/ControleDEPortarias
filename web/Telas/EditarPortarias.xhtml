@@ -88,30 +88,57 @@
                         </p:cellEditor>
                     </p:column>
                     
-                    <p:column headerText="Razão" >
+                    <p:column headerText="Resolve" >
                         <p:cellEditor>
-                            <f:facet name="output"><p:outputLabel value="#{portaria.espacoTextoPort}" /></f:facet>
+                               <f:facet name="output"><p:outputLabel value="#{portaria.resolve}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputTextarea value="#{portaria.espacoTextoPort}" 
-                                             placeholder="#{portaria.espacoTextoPort}"
+                                <p:inputTextarea value="#{portaria.resolve}" 
+                                             placeholder="#{portaria.resolve}"
                                              maxlength="255"
                                              style="width: 100%;" />
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
                     
-                    <p:column headerText="Vigêcia em meses" >
+                    <p:column headerText="Vigêcia Início" >
                         <p:cellEditor>
-                            <f:facet name="output"><p:outputLabel value="#{portaria.vigencia}" /></f:facet>
+                               <f:facet name="output"><p:outputLabel value="#{portaria.vigenciaInicio}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputTextarea value="#{portaria.vigencia}" 
-                                                 placeholder="#{portaria.vigencia}"
+                                <p:inputTextarea value="#{portaria.vigenciaInicio}" 
+                                                 placeholder="#{portaria.vigenciaInicio}"
                                              maxlength="255"
                                              style="width: 100%;" />
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
-                    
+                 
+                 
+                 <p:column headerText="Vigêcia Fim" >
+                        <p:cellEditor>
+                               <f:facet name="output"><p:outputLabel value="#{portaria.vigenciaFim}" /></f:facet>
+                            <f:facet name="input">
+                                <p:inputTextarea value="#{portaria.vigenciaFim}" 
+                                                 placeholder="#{portaria.vigenciaFim}"
+                                             maxlength="255"
+                                             style="width: 100%;" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                 
+                 
+                  <p:column headerText="Status" >
+                        <p:cellEditor>
+                                  <f:facet name="output"><p:outputLabel value="#{portaria.status}" /></f:facet>
+                            <f:facet name="input">
+                                <p:inputTextarea value="#{portaria.status}" 
+                                                 placeholder="#{portaria.status}"
+                                             maxlength="255"
+                                             style="width: 100%;" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                 
+                    ISSO AQUI É PRA FAZER ALGO, PEGUEI DE EDITAR FUNCIONARIO
                    <p:column headerText="Usuário" width="110" >
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.tipoUsuario}" /></f:facet>

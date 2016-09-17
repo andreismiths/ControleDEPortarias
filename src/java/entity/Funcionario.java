@@ -54,6 +54,8 @@ public class Funcionario implements Serializable {
     
       // getter e setters
 
+    
+    
     public Integer getSiapeUsuario() {
         return siapeUsuario;
     }

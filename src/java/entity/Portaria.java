@@ -19,12 +19,14 @@ public class Portaria implements Serializable {
     
     @ManyToMany
     private List<Funcionario> funcionarios;
-
       
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)    
+    @Column(name="ID_Portaria")
+    private Integer IDPort;
+    
     @Column(name="Numero_Portaria")
-    private Integer numeroPort;
+    private String numeroPort;
     
     @Column(name="Ementa_Portaria")
     private String ementaPort;
@@ -33,20 +35,36 @@ public class Portaria implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataHomologaPort;
   
-    @Column(name="Texto_Portaria")
-    private String espacoTextoPort;
+    @Column(name="Resolve_Port")
+    private String resolve;
          
-    @Column(name="Vigencia")
-    private String vigencia;
+    @Column(name="Vigencia_Inicio")
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date vigenciaInicio;
+    
+    @Column(name="Vigencia_Fim")
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date vigenciaFim;
     
     @Column(name="Projeto")
     private String projeto;
+    
+    @Column(name="Status")
+    private String status;
     
     @Column(name="Assinatura_Portaria")
     private String assinaturaPort;
 
     //getters e setters
 
+    public Integer getIDPort() {
+        return IDPort;
+    }
+
+    public void setIDPort(Integer IDPort) {
+        this.IDPort = IDPort;
+    }
+        
     public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
@@ -55,12 +73,12 @@ public class Portaria implements Serializable {
         this.funcionarios = funcionarios;
     }
 
-    public String getEspacoTextoPort() {
-        return espacoTextoPort;
+    public String getResolve() {
+        return resolve;
     }
 
-    public void setEspacoTextoPort(String espacoTextoPort) {
-        this.espacoTextoPort = espacoTextoPort;
+    public void setResolve(String resolve) {
+        this.resolve = resolve;
     }
 
     public String getAssinaturaPort() {
@@ -71,11 +89,11 @@ public class Portaria implements Serializable {
         this.assinaturaPort = assinaturaPort;
     }
 
-    public Integer getNumeroPort() {
+    public String getNumeroPort() {
         return numeroPort;
     }
 
-    public void setNumeroPort(Integer numeroPort) {
+    public void setNumeroPort(String numeroPort) {
         this.numeroPort = numeroPort;
     }
 
@@ -95,14 +113,23 @@ public class Portaria implements Serializable {
         this.dataHomologaPort = dataHomologaPort;
     }
 
-    public String getVigencia() {
-        return vigencia;
+    public Date getVigenciaInicio() {
+        return vigenciaInicio;
     }
 
-    public void setVigencia(String vigencia) {
-        this.vigencia = vigencia;
+    public void setVigenciaInicio(Date vigenciaInicio) {
+        this.vigenciaInicio = vigenciaInicio;
     }
 
+    public Date getVigenciaFim() {
+        return vigenciaFim;
+    }
+
+    public void setVigenciaFim(Date vigenciaFim) {
+        this.vigenciaFim = vigenciaFim;
+    }
+
+    
     public String getProjeto() {
         return projeto;
     }
@@ -111,10 +138,20 @@ public class Portaria implements Serializable {
         this.projeto = projeto;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.funcionarios);
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.IDPort);
         return hash;
     }
 
@@ -130,13 +167,13 @@ public class Portaria implements Serializable {
             return false;
         }
         final Portaria other = (Portaria) obj;
-        if (!Objects.equals(this.funcionarios, other.funcionarios)) {
+        if (!Objects.equals(this.IDPort, other.IDPort)) {
             return false;
         }
         return true;
     }
+
+    
     
  
-      
-
 }

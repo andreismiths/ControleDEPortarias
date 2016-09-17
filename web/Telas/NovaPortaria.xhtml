@@ -14,8 +14,8 @@
 
 <p:panelGrid columns="2" layout="grid" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4">
 
-    <p:outputLabel value="Número Portaria:*" />
-                        <p:inputText  placeholder="Informe Numero da Portaria"/>
+                        <p:outputLabel value="Número Portaria:*" />
+                        <p:inputText  placeholder="Ex: 001/2016" value="#{CadastroPort.portaria.numeroPort}"/>
                         
                         <p:outputLabel value="Ementa:*"/>
                         <p:inputText placeholder="Informe a Ementa" value="#{CadastroPort.portaria.ementaPort}"/>
@@ -32,7 +32,7 @@
                         </p:selectOneMenu>
 
                          <p:outputLabel value="Professor:*"/>
-                         <p:selectOneMenu filter="true"  value="#{CadastroPort.portaria.funcionarios}"
+                         <p:selectOneMenu filter="true"  value="#{CadastroPort.funcionarioSelecionado}"
                                           converter="funcionariosConverter" requiredMessage="Selecione o Professor">
                              <f:selectItem noSelectionOption="true" itemLabel="Selecione um Professor"/>
                             <f:selectItems value="#{CadastroFunc.listaFuncionario}" var="funcionario" 
@@ -40,13 +40,24 @@
                          </p:selectOneMenu> 
 
 
-                        <p:outputLabel for="Razao" value="Razão:"/>
-                        <p:inputTextarea class="maiuscula" id="Razao" required="true" requiredMessage="Informe sua razão!" maxlength="255" value="#{CadastroPort.portaria.espacoTextoPort}"/>
+                        <p:outputLabel for="Resolve" value="Resolve:"/>
+                        <p:inputTextarea id="Resolve" required="true" requiredMessage="Informe sua razão!" maxlength="255" value="#{CadastroPort.portaria.resolve}"/>
 
 
-                        <h:outputLabel for="minMax" value="Vigência em meses:* " />
-                        <p:spinner id="minMax" value="#{CadastroPort.portaria.vigencia}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
-
+                        <p:outputLabel value="Vigência Início:*" />
+                        <p:calendar id="vigenciaInicio" required="true" maxlength="10" value="#{CadastroPort.portaria.vigenciaInicio}" 
+                                    locale="de" navigator="true" pattern="yyyy-mm-dd"/>
+                        
+                        <p:outputLabel value="Vigência Fim:*" />
+                        <p:calendar id="vigenciaFim" required="true" maxlength="10" value="#{CadastroPort.portaria.vigenciaFim}" 
+                                    locale="de" navigator="true" pattern="yyyy-mm-dd"/>
+                        
+                        <p:outputLabel value="Status:*"/>
+                        <p:selectOneMenu  effect="fold" editable="true" value="#{CadastroPort.portaria.status}">
+                            <f:selectItem itemLabel="Vigente" itemValue="Vigente" />
+                            <f:selectItem itemLabel="Expirada" itemValue="Expirada" />                            
+                        </p:selectOneMenu>
+                        
 <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
    <p:panelGrid id="display" columns="2" columnClasses="label,value">
 
@@ -109,12 +120,15 @@
                          </p:selectOneMenu> 
 
 
-                        <p:outputLabel for="Razao" value="Razão:"/>
-                        <p:inputTextarea class="maiuscula" id="Razao" required="true" requiredMessage="Informe sua razão!" maxlength="255" value="#{CadastroPort.portaria.espacoTextoPort}"/>
+                        <p:outputLabel for="Razao" value="Resolve:"/>
+                      <p:inputTextarea class="maiuscula" id="Razao" required="true" requiredMessage="Informe sua razão!" maxlength="255" value="#{CadastroPort.portaria.resolve}"/>
 
 
-                        <h:outputLabel for="minMax" value="Vigência em meses:* " />
-                        <p:spinner id="minMax" value="#{CadastroPort.portaria.vigencia}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
+                        <h:outputLabel for="minMax" value="Vigência Início:* " />
+                      <p:spinner id="minMax" value="#{CadastroPort.portaria.vigenciaInicio}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
+
+                        <h:outputLabel for="minMax" value="Vigência Fim:* " />
+                      <p:spinner id="minMax" value="#{CadastroPort.portaria.vigenciaFim}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
 
                     </h:panelGrid>
                 </p:panel>
@@ -142,11 +156,13 @@
                             <h:outputText value="#{CadastroPort.portaria.funcionarios}"/>
 
                             <p:outputLabel value="Razão:"/>
-                            <h:outputText value="#{CadastroPort.portaria.espacoTextoPort}"/>
+                          <h:outputText value="#{CadastroPort.portaria.resolve}"/>
 
-                            <h:outputLabel value="Vigência em meses:* " />
-                            <h:outputText value="#{CadastroPort.portaria.vigencia}"/>
+                            <h:outputLabel value="Vigência Início:* " />
+                          <h:outputText value="#{CadastroPort.portaria.vigenciaInicio}"/>
 
+                            <h:outputLabel value="Vigência Fim:* " />
+                          <h:outputText value="#{CadastroPort.portaria.vigenciaFim}"/>
                             <h:outputText />
                             <h:outputText />
                         </h:panelGrid>
