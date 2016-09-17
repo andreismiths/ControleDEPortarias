@@ -3,6 +3,7 @@ package entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,10 +20,7 @@ public class Portaria implements Serializable {
     @ManyToMany
     private List<Funcionario> funcionarios;
 
-    @ManyToMany
-    private List<Status> status;
-     
-   
+      
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)    
     @Column(name="Numero_Portaria")
@@ -55,14 +53,6 @@ public class Portaria implements Serializable {
 
     public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
-    }
-
-    public List<Status> getStatus() {
-        return status;
-    }
-
-    public void setStatus(List<Status> status) {
-        this.status = status;
     }
 
     public String getEspacoTextoPort() {
@@ -119,6 +109,31 @@ public class Portaria implements Serializable {
 
     public void setProjeto(String projeto) {
         this.projeto = projeto;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.funcionarios);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Portaria other = (Portaria) obj;
+        if (!Objects.equals(this.funcionarios, other.funcionarios)) {
+            return false;
+        }
+        return true;
     }
     
  

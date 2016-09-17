@@ -6,7 +6,6 @@
 package bean;
 
 
-import java.util.Map;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -14,6 +13,9 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Named;
 import entity.Funcionario;
+import entity.Portaria;
+import javax.faces.application.FacesMessage;
+import javax.faces.convert.ConverterException;
 
 
 /**
@@ -25,41 +27,29 @@ import entity.Funcionario;
 @FacesConverter(value = "funcionariosConverter")
 public class funcionariosConverter implements Converter {
 
-
 @Override
-public Object getAsObject(FacesContext ctx, UIComponent component, String value) {
-    if (value != null) {
-      return this.getAttributesFrom(component).get(value);
-}
-    return null;
+public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
+        if(value != null && value.trim().length() > 0) {
+            try {
+                Funcionario funcionario = (Funcionario) fc.getExternalContext().getApplicationMap().get("funcionario");
+                return funcionario.getFuncionario().get(Integer.parseInt(value));
+            } catch(NumberFormatException e) {
+                throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro de Conversão", "Funcionário não válido"));
+            }
+        }
+        else {
+            return null;
+        }
     }
-
-
+ 
 @Override
-public String getAsString(FacesContext ctx, UIComponent component, Object value) {
-    if (value != null && !"".equals(value)) {
-        Funcionario entity = (Funcionario) value;
-
-    if (entity.getSiapeUsuario() != null) {
-        this.addAttribute(component, entity);
-
-    if (entity.getSiapeUsuario() != null) {
-        return String.valueOf(entity.getSiapeUsuario());
-    }
-        return (String) value;
-    }
-    }
-        return "";
-
-}
-
-
-private void addAttribute(UIComponent component, Funcionario o) {
-    this.getAttributesFrom(component).put(o.getSiapeUsuario(), o);
-}
-
-private Map<String, Object> getAttributesFrom(UIComponent component) {
-    return component.getAttributes();
-}
+    public String getAsString(FacesContext fc, UIComponent uic, Object object) {
+        if(object != null) {
+            return String.valueOf(((Funcionario) object).getSiapeUsuario());
+        }
+        else {
+            return null;
+        }
+    }   
 
 }

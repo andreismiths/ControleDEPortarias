@@ -1,21 +1,43 @@
 package entity;
 
 
-import entity.Portaria;
-import entity.Usuario;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
-import static javax.ws.rs.client.Entity.entity;
 
 
 @Entity(name="Funcionario")
-public class Funcionario extends Usuario implements Serializable {
+public class Funcionario implements Serializable {
     
+    @Id
+    @Column(name="Siape_Usuario")
+    Integer siapeUsuario;   
+   
+    @Column(name="CPF_Usuario")
+    String cpfUsuario;
+    
+    @Column(name="Senha_Usuario")
+    String senhaUsuario;
+        
+    @Column(name="Nome_Usuario")
+    String nomeUsuario;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name="Data_Nascimento_Usuario")
+    Date dataNascimUsuario;
+    
+    @Column(name="Email_Usuario")
+    String emailUsuario;
+    
+    @Column(name="Tipo_Usuario")
+    String tipoUsuario;
     
     @Column(name="Departamento_Funcionario")
     private String departanento;
@@ -26,9 +48,67 @@ public class Funcionario extends Usuario implements Serializable {
     
     @ManyToMany (mappedBy = "funcionarios")
     private List<Portaria> portarias;
-
     
-     // getter e setters
+    @OneToMany
+    private List<Funcionario> funcionario;
+    
+      // getter e setters
+
+    public Integer getSiapeUsuario() {
+        return siapeUsuario;
+    }
+
+    public void setSiapeUsuario(Integer siapeUsuario) {
+        this.siapeUsuario = siapeUsuario;
+    }
+
+    public String getCpfUsuario() {
+        return cpfUsuario;
+    }
+
+    public void setCpfUsuario(String cpfUsuario) {
+        this.cpfUsuario = cpfUsuario;
+    }
+
+    public String getSenhaUsuario() {
+        return senhaUsuario;
+    }
+
+    public void setSenhaUsuario(String senhaUsuario) {
+        this.senhaUsuario = senhaUsuario;
+    }
+
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public Date getDataNascimUsuario() {
+        return dataNascimUsuario;
+    }
+
+    public void setDataNascimUsuario(Date dataNascimUsuario) {
+        this.dataNascimUsuario = dataNascimUsuario;
+    }
+
+    public String getEmailUsuario() {
+        return emailUsuario;
+    }
+
+    public void setEmailUsuario(String emailUsuario) {
+        this.emailUsuario = emailUsuario;
+    }
+
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
 
     public String getDepartanento() {
         return departanento;
@@ -52,6 +132,45 @@ public class Funcionario extends Usuario implements Serializable {
 
     public void setPortarias(List<Portaria> portarias) {
         this.portarias = portarias;
+    }
+
+    public List<Funcionario> getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(List<Funcionario> funcionario) {
+        this.funcionario = funcionario;
+    }
+    
+    
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 89 * hash + Objects.hashCode(this.portarias);
+        hash = 89 * hash + Objects.hashCode(this.funcionario);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Funcionario other = (Funcionario) obj;
+        if (!Objects.equals(this.portarias, other.portarias)) {
+            return false;
+        }
+        if (!Objects.equals(this.funcionario, other.funcionario)) {
+            return false;
+        }
+        return true;
     }
      
 

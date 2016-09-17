@@ -4,10 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/src/java/bean/funcionariosConverter.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/src/java/entity/Usuario.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/src/java/entity/Funcionario.java</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/src/java/bean/CadastroPortaria.java</file>
             <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/src/java/entity/Portaria.java</file>
             <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/WEB-INF/templates/Adm_Menu.xhtml</file>
+            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/Telas/EditarPortarias.xhtml</file>
             <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/src/java/bean/CadastroFuncBean.java</file>
-            <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/Telas/Relatorios.xhtml</file>
             <file>file:/home/andreismiths/NetBeansProjects/ControleDePortarias/web/Telas/NovaPortaria.xhtml</file>
         </group>
     </open-files>
