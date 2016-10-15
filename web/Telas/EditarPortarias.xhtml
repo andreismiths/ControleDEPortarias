@@ -25,7 +25,7 @@
                         Portarias
                     </f:facet>
                     
-                    <!-- <p:ajax event="rowEdit" listener="#" /> --> 
+                    
                     <p:ajax event="rowEdit" />
                     <p:ajax event="rowEditCancel"  />
                     
@@ -40,7 +40,7 @@
                         </p:cellEditor>
                     </p:column>
                     
-                 <!--   <p:column headerText="Ementa" >
+                   <p:column headerText="Ementa" >
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{portaria.ementaPort}" /></f:facet>
                             <f:facet name="input">
@@ -52,12 +52,12 @@
                         </p:cellEditor>
                     </p:column>
                     
-                    <p:column headerText="Homologação" >
+                    <p:column headerText="Título do Projeto" >
                         <p:cellEditor>
-                            <f:facet name="output"><p:outputLabel value="#{portaria.dataHomologaPort}" /></f:facet>
+                            <f:facet name="output"><p:outputLabel value="#{portaria.titulo}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputText value="#{portaria.dataHomologaPort}" 
-                                             placeholder="#{portaria.dataHomologaPort}"
+                                <p:inputText value="#{portaria.titulo}" 
+                                             placeholder="#{portaria.titulo}"
                                              maxlength="255"
                                              style="width: 100%;" />
                             </f:facet>
@@ -76,24 +76,24 @@
                         </p:cellEditor>
                     </p:column>
                     
-                    <p:column headerText="Professor" >
+                    <p:column headerText="Professor Coordenador" >
                         <p:cellEditor>
-                            <f:facet name="output"><p:outputLabel value="#{portaria.funcionarios}" /></f:facet>
+                            <f:facet name="output"><p:outputLabel value="#{portaria.profCoordenador}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputTextarea value="#{portaria.funcionarios}" 
-                                             placeholder="#{portaria.funcionarios}"
+                                <p:inputTextarea value="#{portaria.profCoordenador}" 
+                                             placeholder="#{portaria.profCoordenador}"
                                              maxlength="255"
                                              style="width: 100%;" />
                             </f:facet>
                         </p:cellEditor>
                     </p:column>
                     
-                    <p:column headerText="Resolve" >
+                    <p:column headerText="Siape Prof Coordenador" >
                         <p:cellEditor>
-                               <f:facet name="output"><p:outputLabel value="#{portaria.resolve}" /></f:facet>
+                            <f:facet name="output"><p:outputLabel value="#{portaria.siapeCoordenador}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputTextarea value="#{portaria.resolve}" 
-                                             placeholder="#{portaria.resolve}"
+                                <p:inputTextarea value="#{portaria.siapeCoordenador}" 
+                                             placeholder="#{portaria.siapeCoordenador}"
                                              maxlength="255"
                                              style="width: 100%;" />
                             </f:facet>
@@ -138,7 +138,7 @@
                         </p:cellEditor>
                     </p:column>
                  
-                    ISSO AQUI É PRA FAZER ALGO, PEGUEI DE EDITAR FUNCIONARIO
+                    
                    <p:column headerText="Usuário" width="110" >
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.tipoUsuario}" /></f:facet>
@@ -149,7 +149,7 @@
                                 </p:selectOneMenu>
                             </f:facet>
                         </p:cellEditor>
-                    </p:column> -->
+                    </p:column> 
                     
                     <p:column style="width:32px">
                         <p:rowEditor />

@@ -37,22 +37,6 @@ public class RepositorioImpl<T> implements Repositorio<T> {
 	}
         
 
-        /*valida usuario e senha 
-         public String envia() {
-              
-              usuario = usuarioDAO.getUsuario(usuario.getNomeUsuario(), usuario.getSenha());
-              if (usuario == null) {
-                    usuario = new Usuario();
-                    FacesContext.getCurrentInstance().addMessage(
-                               null,
-                               new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuário não encontrado!",
-                                           "Erro no Login!"));
-                    return null;
-              } else {
-                    return "/main";
-              }        
-        }*/
-                
     /**
      *
      * @param entidade

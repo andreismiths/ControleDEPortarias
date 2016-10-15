@@ -11,171 +11,81 @@
    
                      
 <p:tab title="Portaria" rendered="true">
+    <div class="ui-fluid">
+    <p:messages  id="messages" autoUpdate="true" closable="true"/>
     <h:form id="NovaPortaria" style="margin-left: auto" class="ui-fluid">
 
 <p:panelGrid columns="2" layout="grid" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2, ui-grid-col-4">
 
-                        <p:outputLabel value="Número Portaria:*" />
-                        <p:inputText  placeholder="Ex: 001/2016" value="#{CadastroPort.portaria.numeroPort}"/>
+                        <p:outputLabel value="Número Portaria: *" />
+                        <p:inputText  placeholder="Ex: 001/2016" required="true" requiredMessage="Informe o Número da Portaria!" value="#{CadastroPort.portaria.numeroPort}"/>
                         
-                        <p:outputLabel value="Ementa:*"/>
-                        <p:inputText placeholder="Informe a Ementa" value="#{CadastroPort.portaria.ementaPort}"/>
-
-                        <p:outputLabel value="Data Homologação:*" />
-                        <p:calendar id="dataHomolog" required="true" maxlength="10" value="#{CadastroPort.portaria.dataHomologaPort}" 
-                                    locale="de" navigator="true" pattern="yyyy-mm-dd"/>
-
-                        <p:outputLabel value="Projeto:*"/>
-                        <p:selectOneMenu id="city"  effect="fold" editable="true" value="#{CadastroPort.portaria.projeto}">
+                        <p:outputLabel value="Ementa: *"/>
+                        <p:inputText placeholder="Informe a Ementa" required="true" requiredMessage="Informe a Ementa!" value="#{CadastroPort.portaria.ementaPort}"/>
+                        
+                        <p:outputLabel value="Projeto: *" />
+                        <p:selectOneMenu id="city"  effect="fold" required="true" requiredMessage="Informe o Projeto!"  editable="true" value="#{CadastroPort.portaria.projeto}">
                             <f:selectItem itemLabel="Pesquisa" itemValue="Pesquisa" />
                             <f:selectItem itemLabel="Extensão" itemValue="Extensão" />
                             <f:selectItem itemLabel="Ensino" itemValue="Ensino" />  
                         </p:selectOneMenu>
-
-                         <p:outputLabel value="Professor:*"/>
-                         <p:selectOneMenu filter="true"  value="#{CadastroPort.funcionarioSelecionado}"
-                                          converter="funcionariosConverter" requiredMessage="Selecione o Professor">
-                             <f:selectItem noSelectionOption="true" itemLabel="Selecione um Professor"/>
-                            <f:selectItems value="#{CadastroFunc.listaFuncionario}" var="funcionario" 
-                                           itemValue="#{funcionario}" itemLabel="#{funcionario.nomeUsuario}" />
-                         </p:selectOneMenu> 
-
-
-                        <p:outputLabel for="Resolve" value="Resolve:"/>
-                        <p:inputTextarea id="Resolve" required="true" requiredMessage="Informe sua razão!" maxlength="255" value="#{CadastroPort.portaria.resolve}"/>
-
-
+                        
+                        <p:outputLabel value="Título do Projeto: *"/>
+                        <p:inputText placeholder="Informe a Ementa" required="true" requiredMessage="Informe o Título do Projeto!" value="#{CadastroPort.portaria.titulo}"/>
+                                             
+                        <p:outputLabel value="Faculdade: *"/>
+                        <p:selectOneMenu effect="fold" required="true" requiredMessage="Informe a Faculdade!" editable="true" value="#{CadastroPort.portaria.faculdade}">
+                            <f:selectItem itemLabel="Faculdade de Computação" itemValue="Computação" />
+                            <f:selectItem itemLabel="Faculdade de Matematica" itemValue="Matematica" />
+                            <f:selectItem itemLabel="Faculdade de Letras" itemValue="Letras" />  
+                            <f:selectItem itemLabel="Faculdade de Educação Física" itemValue="Educação Física" />
+                            <f:selectItem itemLabel="Faculdade de Pedagogia" itemValue="Pedagogia" />
+                            <f:selectItem itemLabel="EJA" itemValue="EJA" /> 
+                        </p:selectOneMenu>
+                        
+                        <p:outputLabel value="Professor Coordenador: *"/>
+                        <p:inputText required="true" requiredMessage="Informe o Professor Coordenador" value="#{CadastroPort.portaria.profCoordenador}"/>
+                        
+                        <p:outputLabel value="Siape Professor Coordenador: *"/>
+                        <p:inputText required="true" requiredMessage="Informe o Siape Professor Coordenador!" value="#{CadastroPort.portaria.siapeCoordenador}"/>
+                        
+                        
                         <p:outputLabel value="Vigência Início:*" />
-                        <p:calendar id="vigenciaInicio" required="true" maxlength="10" value="#{CadastroPort.portaria.vigenciaInicio}" 
+                        <p:calendar id="vigenciaInicio" required="true" requiredMessage="Informe a Vigência Início" maxlength="10" value="#{CadastroPort.portaria.vigenciaInicio}" 
                                     locale="de" navigator="true" pattern="yyyy-mm-dd"/>
                         
                         <p:outputLabel value="Vigência Fim:*" />
-                        <p:calendar id="vigenciaFim" required="true" maxlength="10" value="#{CadastroPort.portaria.vigenciaFim}" 
+                        <p:calendar id="vigenciaFim" required="true" requiredMessage="Informe a Vigência Fim" maxlength="10" value="#{CadastroPort.portaria.vigenciaFim}" 
                                     locale="de" navigator="true" pattern="yyyy-mm-dd"/>
+                        
+                        <p:outputLabel value="Colaborador 1: *"/>
+                        <p:inputText placeholder="Informe a Ementa" value="#{CadastroPort.portaria.colaborador1}"/>
+                        
+                        <p:outputLabel value="Colaborador 2: *"/>
+                        <p:inputText placeholder="Informe a Ementa" value="#{CadastroPort.portaria.colaborador2}"/>
+                        
+                        <p:outputLabel value="Colaborador 3: *"/>
+                        <p:inputText placeholder="Informe a Ementa" value="#{CadastroPort.portaria.colaborador3}"/>
                         
                         <p:outputLabel value="Status:*"/>
                         <p:selectOneMenu  effect="fold" editable="true" value="#{CadastroPort.portaria.status}">
                             <f:selectItem itemLabel="Vigente" itemValue="Vigente" />
                             <f:selectItem itemLabel="Expirada" itemValue="Expirada" />                            
                         </p:selectOneMenu>
-                        
-<p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
-   <p:panelGrid id="display" columns="2" columnClasses="label,value">
 
-<h:outputText value="German:"/>
-<h:outputText>
-<f:convertDateTime pattern="MM/dd/yyyy"/>
-</h:outputText>
-
-</p:panelGrid>
-</p:dialog>
 </p:panelGrid>
 
     
 <p:panelGrid columns="3" layout="grid" style="margin-top: 25px" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-2,ui-grid-col-2,ui-grid-col-2">
-<p:button id="Voltartela" icon="fa fa-undo" value="Voltar" outcome="/Telas/PaginaInicial"/>
-<p:commandButton type="reset" id="LimparCampos2" icon="fa fa-eraser" value="Limpar" action="#"/>
-<p:commandButton id="SalvarUsuario1" icon="fa fa-save" actionListener="#{CadastroPort.criaPort()}" value="Salvar"/>
+<p:button icon="fa fa-undo" value="Voltar" outcome="/Telas/PaginaInicial"/>
+<p:commandButton type="reset" id="LimparCampos" icon="fa fa-eraser" value="Limpar" action="#"/>
+<p:commandButton value="Relatório" action="#{CadastroPort.gerarRelatorioAction()}" ajax="false" onclick="this.form.target='_blank'"/>
+<p:commandButton id="SalvarPortaria" icon="fa fa-save" actionListener="#{CadastroPort.criaPort()}" value="Salvar"/>
 </p:panelGrid>
     
 </h:form>
+</div>
 </p:tab>
-    
-    
-    
-    <!-- TESTANDO WIZARD 
-    
-    
-    <h:form id="NovaPortaria" style="margin-left: auto" class="ui-fluid">
-
-        <p:growl sticky="true" showDetail="true"/>
-
-        <p:wizard > 
-            <p:tab id="wizard" title="Nova Portaria">
-                <p:panel header="Personal Details">
-                    <p:messages />
-                    <h:panelGrid columns="2" columnClasses="label, value">
-                        <p:outputLabel value="Número Portaria:*" />
-                        <p:inputText  placeholder="Informe Numero da Portaria"/>
-                        
-                        <p:outputLabel value="Ementa:*"/>
-                        <p:inputText placeholder="Informe a Ementa" value="#{CadastroPort.portaria.ementaPort}"/>
-
-                        <p:outputLabel value="Data Homologação:*" />
-                        <p:calendar id="dataHomolog" required="true" maxlength="10" value="#{CadastroPort.portaria.dataHomologaPort}" 
-                                    locale="de" navigator="true" pattern="yyyy-mm-dd"/>
-
-                        <p:outputLabel value="Projeto:*"/>
-                        <p:selectOneMenu id="city"  effect="fold" editable="true" value="#{CadastroPort.portaria.projeto}">
-                            <f:selectItem itemLabel="Pesquisa" itemValue="Pesquisa" />
-                            <f:selectItem itemLabel="Extensão" itemValue="Extensão" />
-                            <f:selectItem itemLabel="Ensino" itemValue="Ensino" />  
-                        </p:selectOneMenu>
-
-                         <p:outputLabel value="Professor:*"/>
-                         <p:selectOneMenu filter="true"  value="#{CadastroPort.portaria.funcionarios}"
-                                          converter="funcionarioConverter" requiredMessage="Selecione o Professor">
-                             <f:selectItem noSelectionOption="true" itemLabel="Selecione um Professor"/>
-                            <f:selectItems value="#{CadastroFunc.listaFuncionario}" var="funcionario" 
-                                           itemValue="#{funcionario}" itemLabel="#{funcionario.nomeUsuario}" />
-                         </p:selectOneMenu> 
-
-
-                        <p:outputLabel for="Razao" value="Resolve:"/>
-                      <p:inputTextarea class="maiuscula" id="Razao" required="true" requiredMessage="Informe sua razão!" maxlength="255" value="#{CadastroPort.portaria.resolve}"/>
-
-
-                        <h:outputLabel for="minMax" value="Vigência Início:* " />
-                      <p:spinner id="minMax" value="#{CadastroPort.portaria.vigenciaInicio}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
-
-                        <h:outputLabel for="minMax" value="Vigência Fim:* " />
-                      <p:spinner id="minMax" value="#{CadastroPort.portaria.vigenciaFim}" min="0" max="24" requiredMessage="Selecionar Vigência"/>
-
-                    </h:panelGrid>
-                </p:panel>
-            </p:tab>
-
-
-            <p:tab id="confirm" title="Confirme os Dados">
-                <p:panel header="Confirme os Dados">
-                    <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
-                        <h:panelGrid columns="2" columnClasses="label, value">
-
-                            <p:outputLabel value="Número Portaria:*" />
-                            <h:outputText  value="#{CadastroPort.portaria.numeroPort}"/>
-
-                            <p:outputLabel value="Ementa:*"/>
-                            <h:outputText value="#{CadastroPort.portaria.ementaPort}"/>
-
-                            <p:outputLabel value="Data Homologação:*" />
-                            <h:outputText value="#{CadastroPort.portaria.dataHomologaPort}"/>
-
-                            <p:outputLabel value="Projeto:*"/>
-                            <h:outputText value="#{CadastroPort.portaria.projeto}"/>
-
-                            <p:outputLabel value="Professor:*"/>
-                            <h:outputText value="#{CadastroPort.portaria.funcionarios}"/>
-
-                            <p:outputLabel value="Razão:"/>
-                          <h:outputText value="#{CadastroPort.portaria.resolve}"/>
-
-                            <h:outputLabel value="Vigência Início:* " />
-                          <h:outputText value="#{CadastroPort.portaria.vigenciaInicio}"/>
-
-                            <h:outputLabel value="Vigência Fim:* " />
-                          <h:outputText value="#{CadastroPort.portaria.vigenciaFim}"/>
-                            <h:outputText />
-                            <h:outputText />
-                        </h:panelGrid>
-                    </h:panelGrid>
-
-                    <p:commandButton value="Salvar" actionListener="#{CadastroPort.criaPort()}" update="wizard" process="@this"/>
-                </p:panel>
-            </p:tab>
-        </p:wizard>
-
-    </h:form>
-    -->
     
 </ui:define>
 </ui:composition>

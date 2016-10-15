@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import repositorio.RepositorioImpl;
 import entity.Funcionario;
 
+
 /**
  *
  * @author andreismiths
@@ -16,5 +17,6 @@ import entity.Funcionario;
 
 @Stateless
 public class FuncionarioDAO extends RepositorioImpl<Funcionario> {
+ 
     
-}
+ }

@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.primefaces.context.RequestContext;
 import util.JSFMessageUtil;
@@ -103,5 +104,9 @@ public class AbstractMB implements Serializable {
     public Map<String, String> parametrosDoRequest() {
     	FacesContext context = FacesContext.getCurrentInstance();
     	return context.getExternalContext().getRequestParameterMap();
+    }
+    
+    public HttpServletRequest getRequest() {
+        return (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
     }
 }

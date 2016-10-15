@@ -20,7 +20,7 @@ public class Funcionario implements Serializable {
     @Id
     @ConverterId
     @Column(name="Siape_Usuario")
-    Integer siapeUsuario;   
+    String siapeUsuario;   
    
     @Column(name="CPF_Usuario")
     String cpfUsuario;
@@ -52,17 +52,17 @@ public class Funcionario implements Serializable {
     private List<Portaria> portarias;
     
     @OneToMany
-    private List<Funcionario> funcionario;
+    private List<Funcionario> funcionarioSelecionado;
     
       // getter e setters
 
     
     
-    public Integer getSiapeUsuario() {
+    public String getSiapeUsuario() {
         return siapeUsuario;
     }
 
-    public void setSiapeUsuario(Integer siapeUsuario) {
+    public void setSiapeUsuario(String siapeUsuario) {
         this.siapeUsuario = siapeUsuario;
     }
 
@@ -138,14 +138,15 @@ public class Funcionario implements Serializable {
         this.portarias = portarias;
     }
 
-    public List<Funcionario> getFuncionario() {
-        return funcionario;
+    public List<Funcionario> getFuncionarioSelecionado() {
+        return funcionarioSelecionado;
     }
 
-    public void setFuncionario(List<Funcionario> funcionario) {
-        this.funcionario = funcionario;
+    public void setFuncionarioSelecionado(List<Funcionario> funcionarioSelecionado) {
+        this.funcionarioSelecionado = funcionarioSelecionado;
     }
 
+   
         @Override
     public boolean equals(Object obj) {
         if (this == obj) {

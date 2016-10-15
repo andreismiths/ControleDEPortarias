@@ -14,29 +14,28 @@
 
 <p:panelGrid columns="2" layout="grid" styleClass="panelgrid-noborder" columnClasses="ui-grid-col-3, ui-grid-col-4">
 
-    
+ 
 <p:growl id="campoObrigatorio" life="4000" showDetail="false"
                                              rendered="#{facesContext.validationFailed == true}" />
                                     <p:growl for="atencao" id="atencao" life="4000" showDetail="true" />
                                     <p:growl for="erro" id="erro" life="4000" showDetail="true" />
-                                    <p:growl for="sucesso" id="sucesso" life="4000" showDetail="true" autoUpdate="true" />
-
+                                  <p:growl for="sucesso" id="sucesso" life="4000" showDetail="true" autoUpdate="true" />
+                                  
                                     <p:panelGrid styleClass="painel_login" columns="1">
                                         <h3>ACESSE SUA CONTA</h3>
-                                        <p:inputText id="usuario" value="#{usuarioBean.nomeDeUsuario}"
+                                        <p:inputText id="usuario" value="#{loginBean.siape}"
                                                      required="true" style="width: 300px !important; padding: 10px;"
-                                                     requiredMessage="Campo Usuário Obrigatório!"
-                                                     validator="#{usuarioBean.validaUsuario}">
+                                                     requiredMessage="Campo Siape Obrigatório!"
+                                                     >
                                             <p:watermark for="usuario" value="Usuário" />
                                             <p:focus for="usuario" />
                                         </p:inputText>
-                                        <p:password id="senha" value="#{usuarioBean.senha}"
-                                                    required="true" style="width: 300px !important; padding: 10px;"
+                                        <p:password id="senha" value="#{loginBean.senha}" required="true" style="width: 300px !important; padding: 10px;"
                                                     requiredMessage="Campo Senha Obrigatório!"
-                                                    validator="#{usuarioBean.validaSenha}">
+                                                    >
                                             <p:watermark for="senha" value="Senha" />
                                         </p:password>
-                                        <p:button outcome="/Telas/PaginaInicial" value="Entrar" icon="ui-icon-key"/>
+                                        <p:commandButton action="#{loginBean.login()}" value="Entrar" icon="ui-icon-key" />
     
                                     </p:panelGrid>
 </p:panelGrid>

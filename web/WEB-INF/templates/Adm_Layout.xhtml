@@ -21,20 +21,54 @@
 <h:outputScript target="body" library="arquivos" name="javascripts/app.js"/>
 </h:head>
 <h:body>
-   
-<h:graphicImage class="banneradmlayout" library="arquivos" name="images/banner_controle_portarias.png"/>
- 
-    <div class="aw-toggle" style="cursor: pointer">MENU</div>
-    <a href="#" class="aw-toggle  js-toggle">MENU<i class="fa  fa-bars"></i></a>
+    <header class="aw-topbar">
+        <h:graphicImage library="arquivos" name="images/banner_controle_portarias.png" />
+        <a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
+			
+			<div style="float: right; margin-right: 110px">
+				<span style="float: left; height: 30px; line-height: 30px; margin-right: 60px">
+                                    Olá Administrador
+				</span>
+				<div class="aw-toggle" style="cursor: pointer">MENU</div>
+                                <a href="#" class="aw-toggle  js-toggle">MENU<i class="fa  fa-bars"></i></a>
+                                        <h:form style="display: inline-block">
+					<p:menubar styleClass="menu-sistema">
+                                            <p:menuitem class="aw-toggle  js-toggle fa  fa-bars" value="MENU" />
+                                              	<p:submenu label="Configurações">
+							<p:menuitem value="Funcionários" />
+							<p:menuitem value="Usuários" />
+						</p:submenu>
+						<p:submenu label="Editar">
+							<p:menuitem value="Editar Perfil" />
+						</p:submenu>
+                                            <p:submenu label="Ajuda">
+							<p:menuitem value="Sobre" action="/Telas/Sobre"/>
+							<p:menuitem value="Manual"  action="/Telas/Manual"/>
+						</p:submenu>
+                                            <p:menuitem value="Sair" action="/Telas/Login" />
+					</p:menubar>
+				</h:form>
+    </div>
+			<div style="clear: both"></div>
+		</header>
+    <h:form>
+       
     
 <!--  ISSO É O MENU // SIDEBAR É A CONF DELE NO CSS-->
 <aside class="aw-sidebar  js-sidebar">
 <ui:include src="Adm_Menu.xhtml"/>
 </aside>
     
-
+</h:form>
 <section class="aw-content  js-content">
 <ui:insert name="content"/>
-</section>	
+</section>
+    <div>
+        <footer class="rodape">
+            
+			Andrei Smith da Silva - Universidade Federal do Pará -
+			<a href="www.facompcastanhal.ufpa.br" target="_blank">facompcastanhal</a>
+		</footer>
+        </div>
 </h:body>
 </html>

@@ -7,7 +7,7 @@
 	min-height: 50px;
 	z-index: 9999;
 	
-        background-color: #f6f6f6;
+        background-color: #1e94d2;
 }
 
 .banneradmlayout{
@@ -26,17 +26,6 @@
 	min-height: 6px;
 	z-index: 9999;
 	
-}
-
-.aw-topbar-menu-sup {
-	position: fixed;
-	top: auto;
-	right: 0;
-	left: 0;
-	min-height: 50px;
-	z-index: 9999;
-	
-        background-color: #f60104;
 }
 .aw-topbar > img {
 	margin-top: 10px;
@@ -78,23 +67,10 @@
 
 
 /* SIDEBAR CONFIGURAÇÕES DO MENU*/
-/*.aw-sidebar {
-	position:  inherit;
-	
-	
-	width:  min-content;
-	margin-left: 0px; 
-	z-index: 9998;
-	/*transition: margin-left 2s; 
-	overflow-y:  hidden;
-	
-	/*background-color: #eaeaea;
-	border-right: 1px solid #eaeaea; 
-}
-*/
+
 .aw-sidebar {
-	position: fixed;
-	top: 94px;
+	position:  fixed;
+	top: 50px;
 	bottom: 0;
 	left: 0;
 	width:  max-content;
@@ -104,7 +80,36 @@
 	overflow-y: auto;
 	
 	border-right: 1px solid blue;
+        background-color: white;
+	
 }
+
+/* formatando rodapé */
+.rodape {
+        position:absolute;
+	bottom:0;
+	width:100%;
+        text-align: center;
+}
+
+/* MENU BAR SUPERIOR */
+
+.menu-sistema {
+    position:  fixed;
+    border: 0px !important;
+    padding: 0px !important;
+    background: none !important;
+    align-items: center;
+    top: 15px;
+    
+}
+
+.menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text {
+    color:	 black !important;
+}
+
+
+/* FIM MENU BAR SUPERIOR */
 
 .aw-sidebar.is-toggled {
 	margin-left: 0px;

@@ -31,12 +31,20 @@ public class Portaria implements Serializable {
     @Column(name="Ementa_Portaria")
     private String ementaPort;
     
-    @Column(name="Data_Homologaçao")
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dataHomologaPort;
-  
-    @Column(name="Resolve_Port")
-    private String resolve;
+    @Column(name="Projeto")
+    private String projeto;
+    
+    @Column(name="Titulo_Projeto")
+    private String titulo;
+    
+    @Column(name="Faculdade")
+    private String faculdade;
+    
+    @Column(name="Professor_Coordenador")
+    private String profCoordenador;
+    
+    @Column(name="Siape_Coordenador")
+    private String siapeCoordenador;
          
     @Column(name="Vigencia_Inicio")
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -46,16 +54,27 @@ public class Portaria implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date vigenciaFim;
     
-    @Column(name="Projeto")
-    private String projeto;
+    @Column(name="Colaborador1")
+    private String colaborador1;
+    
+    @Column(name="Colaborador2")
+    private String colaborador2;
+    
+    @Column(name="Colaborador3")
+    private String colaborador3;
     
     @Column(name="Status")
     private String status;
-    
-    @Column(name="Assinatura_Portaria")
-    private String assinaturaPort;
 
-    //getters e setters
+    
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {    
+        this.funcionarios = funcionarios;
+    }
 
     public Integer getIDPort() {
         return IDPort;
@@ -63,30 +82,6 @@ public class Portaria implements Serializable {
 
     public void setIDPort(Integer IDPort) {
         this.IDPort = IDPort;
-    }
-        
-    public List<Funcionario> getFuncionarios() {
-        return funcionarios;
-    }
-
-    public void setFuncionarios(List<Funcionario> funcionarios) {
-        this.funcionarios = funcionarios;
-    }
-
-    public String getResolve() {
-        return resolve;
-    }
-
-    public void setResolve(String resolve) {
-        this.resolve = resolve;
-    }
-
-    public String getAssinaturaPort() {
-        return assinaturaPort;
-    }
-
-    public void setAssinaturaPort(String assinaturaPort) {
-        this.assinaturaPort = assinaturaPort;
     }
 
     public String getNumeroPort() {
@@ -105,12 +100,44 @@ public class Portaria implements Serializable {
         this.ementaPort = ementaPort;
     }
 
-    public Date getDataHomologaPort() {
-        return dataHomologaPort;
+    public String getProjeto() {
+        return projeto;
     }
 
-    public void setDataHomologaPort(Date dataHomologaPort) {
-        this.dataHomologaPort = dataHomologaPort;
+    public void setProjeto(String projeto) {
+        this.projeto = projeto;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getFaculdade() {
+        return faculdade;
+    }
+
+    public void setFaculdade(String faculdade) {
+        this.faculdade = faculdade;
+    }
+
+    public String getProfCoordenador() {
+        return profCoordenador;
+    }
+
+    public void setProfCoordenador(String profCoordenador) {
+        this.profCoordenador = profCoordenador;
+    }
+
+    public String getSiapeCoordenador() {
+        return siapeCoordenador;
+    }
+
+    public void setSiapeCoordenador(String siapeCoordenador) {
+        this.siapeCoordenador = siapeCoordenador;
     }
 
     public Date getVigenciaInicio() {
@@ -129,24 +156,38 @@ public class Portaria implements Serializable {
         this.vigenciaFim = vigenciaFim;
     }
 
-    
-    public String getProjeto() {
-        return projeto;
+    public String getColaborador1() {
+        return colaborador1;
     }
 
-    public void setProjeto(String projeto) {
-        this.projeto = projeto;
+    public void setColaborador1(String colaborador1) {
+        this.colaborador1 = colaborador1;
+    }
+
+    public String getColaborador2() {
+        return colaborador2;
+    }
+
+    public void setColaborador2(String colaborador2) {
+        this.colaborador2 = colaborador2;
+    }
+
+    public String getColaborador3() {
+        return colaborador3;
+    }
+
+    public void setColaborador3(String colaborador3) {
+        this.colaborador3 = colaborador3;
     }
 
     public String getStatus() {
         return status;
     }
 
+    //getters e setters
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
 
     @Override
     public int hashCode() {

@@ -10,7 +10,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import dao.FuncionarioDAO;
 import java.util.List;
-import java.util.Objects;
 import javax.inject.Inject;
 
 /**
@@ -37,9 +36,18 @@ public class CadastroFuncBean extends AbstractMB {
     
     private List<Funcionario> listaFuncionario;
     
+    private Funcionario user;
     
-        
+    
+    
+    public Funcionario getUser() {
+        return user;
+    }
+
     //Getters e Setters
+    public void setUser(Funcionario user) {
+        this.user = user;
+    }
 
     public FuncionarioDAO getFuncdao() {
         return funcdao;
@@ -73,8 +81,7 @@ public class CadastroFuncBean extends AbstractMB {
         this.listaFuncionario = listaFuncionario;
     }
     
-    
-    
+      
     public void criaFunc (){
         funcdao.inserir(funcionario);
         super.displayInfoMessageToUser("Funcionário Cadastrado com Sucesso!");
@@ -92,35 +99,9 @@ public class CadastroFuncBean extends AbstractMB {
             System.out.println(listaFuncionario.get(i).getTipoUsuario());
              
          }
-     }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.listaFuncionario);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final CadastroFuncBean other = (CadastroFuncBean) obj;
-        if (!Objects.equals(this.listaFuncionario, other.listaFuncionario)) {
-            return false;
-        }
-        return true;
-    }
+     } 
      
-     
-  
+   
 }
 
 

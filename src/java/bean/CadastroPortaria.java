@@ -6,8 +6,8 @@ import entity.Portaria;
 import dao.PortariaDAO;
 import entity.Funcionario;
 import java.util.List;
-import java.util.Objects;
 import javax.inject.Inject;
+import relatorio.Relatorio;
 
 /**
  *
@@ -31,10 +31,6 @@ public class CadastroPortaria extends AbstractMB {
     private Funcionario FuncionarioSelecionado;
     
     
-    
-    private boolean skip;
-    
-
 //Getters e Setters
 
     public Funcionario getFuncionarioSelecionado() {
@@ -77,13 +73,14 @@ public class CadastroPortaria extends AbstractMB {
         this.listaPortaria = listaPortaria;
     }
 
- 
-
- 
-    
-         
+        
     
      //Funções
+    
+     public void gerarRelatorioAction() {
+        Relatorio relatorio = new Relatorio();
+        relatorio.getRelatorio();
+    }
 
     public void criaPort() {
         System.out.println("Funcionando criar..");
@@ -107,29 +104,7 @@ public class CadastroPortaria extends AbstractMB {
          }
      }
      
-     
-     
-     
-     
-      //skip funçoes do wizard p visualizar dados antes de gerar portaria
-    /*
-    public boolean isSkip() {
-        return skip;
-    }
  
-    public void setSkip(boolean skip) {
-        this.skip = skip;
-    }
-    
-      public String onFlowProcess(FlowEvent event) {
-        if(skip) {
-            skip = false;   //reset in case user goes back
-            return "confirm";
-        }
-        else {
-            return event.getNewStep();
-        }  
-    }*/
 
    
 }
