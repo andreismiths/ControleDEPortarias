@@ -21,6 +21,8 @@ public class Funcionario implements Serializable {
     @ConverterId
     @Column(name="Siape_Usuario")
     String siapeUsuario;   
+    
+    private byte[] foto;
    
     @Column(name="CPF_Usuario")
     String cpfUsuario;
@@ -54,9 +56,16 @@ public class Funcionario implements Serializable {
     @OneToMany
     private List<Funcionario> funcionarioSelecionado;
     
+    
       // getter e setters
 
-    
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
     
     public String getSiapeUsuario() {
         return siapeUsuario;

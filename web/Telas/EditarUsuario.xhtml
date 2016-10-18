@@ -25,7 +25,6 @@
                         Editar Usuário
                     </f:facet>
                     
-                    <!-- <p:ajax event="rowEdit" listener="#" /> --> 
                     <p:ajax event="rowEdit" />
                     <p:ajax event="rowEditCancel"  />
                     
@@ -33,7 +32,7 @@
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.nomeUsuario}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputText disabled="true" 
+                                <p:inputText disabled="true" value="#{CadastroFunc.funcionario.nomeUsuario}" 
                                              placeholder="#{funcionario.nomeUsuario}" 
                                              style="width: 100%;" />
                             </f:facet>
@@ -44,7 +43,7 @@
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.cpfUsuario}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputText value="#{funcionario.cpfUsuario}" 
+                                <p:inputText value="#{CadastroFunc.funcionario.cpfUsuario}" 
                                              placeholder="#{funcionario.cpfUsuario}"
                                              maxlength="255"
                                              style="width: 100%;" />
@@ -56,7 +55,7 @@
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.siapeUsuario}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputText value="#{funcionario.siapeUsuario}" 
+                                <p:inputText value="#{CadastroFunc.funcionario.siapeUsuario}" 
                                              placeholder="#{funcionario.siapeUsuario}"
                                              maxlength="255"
                                              style="width: 100%;" />
@@ -68,7 +67,7 @@
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.dataNascimUsuario}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputTextarea value="#{funcionario.dataNascimUsuario}" 
+                                <p:inputTextarea value="#{CadastroFunc.funcionario.dataNascimUsuario}" 
                                              placeholder="#{funcionario.dataNascimUsuario}"
                                              maxlength="255"
                                              style="width: 100%;" />
@@ -80,7 +79,7 @@
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.emailUsuario}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputTextarea value="#{funcionario.emailUsuario}" 
+                                <p:inputTextarea value="#{CadastroFunc.funcionario.emailUsuario}" 
                                              placeholder="#{funcionario.emailUsuario}"
                                              maxlength="255"
                                              style="width: 100%;" />
@@ -92,7 +91,7 @@
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.senhaUsuario}" /></f:facet>
                             <f:facet name="input">
-                                <p:inputTextarea value="#{funcionario.senhaUsuario}" 
+                                <p:inputTextarea value="#{CadastroFunc.funcionario.senhaUsuario}" 
                                              placeholder="#{funcionario.senhaUsuario}"
                                              maxlength="255"
                                              style="width: 100%;" />
@@ -104,7 +103,7 @@
                         <p:cellEditor>
                             <f:facet name="output"><p:outputLabel value="#{funcionario.tipoUsuario}" /></f:facet>
                             <f:facet name="input">
-                                <p:selectOneMenu value="#{funcionario.tipoUsuario}" >
+                                <p:selectOneMenu value="#{CadastroFunc.funcionario.tipoUsuario}" >
                                            <f:selectItem itemLabel="Professor" itemValue="Professor" />
                                            <f:selectItem itemLabel="Administrador" itemValue="Administrador" />
                                 </p:selectOneMenu>

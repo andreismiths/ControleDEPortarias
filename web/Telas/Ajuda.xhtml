@@ -6,9 +6,16 @@
                 template="/WEB-INF/templates/Func_Layout.xhtml">
 
     <ui:define name="content">
-        <h1 class="aw-page-title">Manual Sistema de Controle de Portarias</h1>
-
-
+        <h1 class="aw-page-title">AJUDA</h1>    
+ 
+    <p:panel id="ajuda" header="Ajuda" footer="Sistema de Controle de Portarias" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <p:inputTextarea class="ajuda"/>
+            <h:outputText
+                value="The story begins as Don Vito Corleone..." />
+        </h:panelGrid>
+    </p:panel>
+ 
     </ui:define>
 
 </ui:composition>
