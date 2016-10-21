@@ -32,8 +32,9 @@
                     <p:menubar class="aw-content" styleClass="menu-sistema">
                         <p:submenu label="Ajuda">
                             <p:menuitem value="Sobre" action="/Telas/SobreLogin"/>
-                            <p:menuitem value="Ajuda"  action="/Telas/Ajuda"/>
+                            <p:menuitem value="Ajuda"  action="/Telas/AjudaLogin"/>
                         </p:submenu>
+                        <p:menuitem value="Sair" action="/Telas/Login" />
                     </p:menubar>
                 </h:form>
             </div>
@@ -43,6 +44,13 @@
 
         <section class="aw-content  js-content">
             <ui:insert name="content"/>
-        </section>	
+        </section>
+        <div>
+            <footer class="rodape">
+                <strong>UFPA - Universidade Federal do Pará - Sistemas de Informação<br/>
+                    Sistema de Controle de Portarias - Andrei Smith da Silva<br/>
+                    Orientador José Jailton Júnior</strong>
+            </footer>
+        </div>
     </h:body>
 </html>

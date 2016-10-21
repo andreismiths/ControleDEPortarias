@@ -140,7 +140,7 @@ public class CadastroFuncBean extends AbstractMB {
             
             System.out.println(listaFuncionario.get(i).getEmailUsuario());
             System.out.println(listaFuncionario.get(i).getSenhaUsuario());
-            System.out.println(listaFuncionario.get(i).getFoto());
+            
             
              
          }
